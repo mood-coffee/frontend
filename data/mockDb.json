@@ -1,0 +1,17 @@
+{
+  "cart": [],
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Products"
+    },
+    {
+      "id": "single-origin",
+      "name": "Single Origin"
+    },
+    {
+      "id": "blend",
+      "name": "Blends"
+    }
+  ]
+}

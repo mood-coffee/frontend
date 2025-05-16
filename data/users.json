@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "bio": "Coffee enthusiast and certified barista with over 10 years of experience in specialty coffee.",
+    "avatar": "/images/avatars/jane-smith.jpg",
+    "role": "author",
+    "socialLinks": {
+      "twitter": "https://twitter.com/janesmith",
+      "instagram": "https://instagram.com/janesmith"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Michael Johnson",
+    "email": "michael.johnson@example.com",
+    "bio": "Coffee roaster and world traveler who has visited coffee farms across four continents.",
+    "avatar": "/images/avatars/michael-johnson.jpg",
+    "role": "author",
+    "socialLinks": {
+      "twitter": "https://twitter.com/michaeljohnson",
+      "instagram": "https://instagram.com/michaeljohnson"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Sarah Williams",
+    "email": "sarah.williams@example.com",
+    "bio": "Coffee shop owner and interior designer specializing in creating unique cafe experiences.",
+    "avatar": "/images/avatars/sarah-williams.jpg",
+    "role": "author",
+    "socialLinks": {
+      "twitter": "https://twitter.com/sarahwilliams",
+      "instagram": "https://instagram.com/sarahwilliams"
+    }
+  }
+]

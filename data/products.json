@@ -1,0 +1,78 @@
+[
+  {
+    "id": "1",
+    "name": "Ethiopian Yirgacheffe",
+    "slug": "ethiopian-yirgacheffe",
+    "description": "A bright, fruity coffee with notes of blueberry, citrus, and chocolate. Medium roast.",
+    "price": 16.99,
+    "currency": "USD",
+    "weight": "12oz",
+    "inStock": true,
+    "category": "single-origin",
+    "origin": "Ethiopia",
+    "roastLevel": "medium",
+    "flavorNotes": ["blueberry", "citrus", "chocolate"],
+    "images": [
+      "/images/products/ethiopian-yirgacheffe-1.jpg",
+      "/images/products/ethiopian-yirgacheffe-2.jpg"
+    ],
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "Colombian Supremo",
+    "slug": "colombian-supremo",
+    "description": "A well-balanced coffee with caramel sweetness and mild acidity. Medium-dark roast.",
+    "price": 15.99,
+    "currency": "USD",
+    "weight": "12oz",
+    "inStock": true,
+    "category": "single-origin",
+    "origin": "Colombia",
+    "roastLevel": "medium-dark",
+    "flavorNotes": ["caramel", "nuts", "citrus"],
+    "images": [
+      "/images/products/colombian-supremo-1.jpg",
+      "/images/products/colombian-supremo-2.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "id": "3",
+    "name": "Morning Blend",
+    "slug": "morning-blend",
+    "description": "A smooth, approachable blend perfect for starting your day. Light-medium roast.",
+    "price": 14.99,
+    "currency": "USD",
+    "weight": "12oz",
+    "inStock": true,
+    "category": "blend",
+    "origin": "Various",
+    "roastLevel": "light-medium",
+    "flavorNotes": ["honey", "almond", "apple"],
+    "images": [
+      "/images/products/morning-blend-1.jpg",
+      "/images/products/morning-blend-2.jpg"
+    ],
+    "featured": true
+  },
+  {
+    "id": "4",
+    "name": "Espresso Blend",
+    "slug": "espresso-blend",
+    "description": "A rich, full-bodied blend designed specifically for espresso. Dark roast.",
+    "price": 17.99,
+    "currency": "USD",
+    "weight": "12oz",
+    "inStock": true,
+    "category": "blend",
+    "origin": "Various",
+    "roastLevel": "dark",
+    "flavorNotes": ["chocolate", "caramel", "cherry"],
+    "images": [
+      "/images/products/espresso-blend-1.jpg",
+      "/images/products/espresso-blend-2.jpg"
+    ],
+    "featured": false
+  }
+]

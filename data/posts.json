@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "title": "The Art of Coffee Brewing",
+    "slug": "art-of-coffee-brewing",
+    "excerpt": "Discover the secrets to brewing the perfect cup of coffee at home with these expert tips.",
+    "content": "Coffee brewing is both an art and a science. The perfect cup of coffee depends on several factors: the quality of the beans, the grind size, the water temperature, and the brewing method. For pour-over coffee, start with freshly roasted beans ground to medium-fine consistency. Heat water to 195-205°F (90-96°C) and pour in a slow, circular motion. The entire process should take about 3-4 minutes for optimal extraction. Experiment with different variables to find your perfect cup.",
+    "author": "Jane Smith",
+    "authorId": "1",
+    "publishedAt": "2024-05-01T08:00:00Z",
+    "updatedAt": "2024-05-01T08:00:00Z",
+    "coverImage": "/images/coffee-brewing.jpg",
+    "tags": ["brewing", "coffee", "guide"]
+  },
+  {
+    "id": "2",
+    "title": "Coffee Bean Origins: A Journey Around the World",
+    "slug": "coffee-bean-origins",
+    "excerpt": "Take a journey through the world's most renowned coffee-growing regions and discover what makes each unique.",
+    "content": "Coffee is grown in what's known as the 'Bean Belt,' the area between the Tropics of Cancer and Capricorn. Each region imparts unique characteristics to its beans. Ethiopian beans are known for their fruity, wine-like qualities, while Colombian beans offer a well-balanced flavor with caramel sweetness. Central American coffees from Guatemala and Costa Rica tend to have bright acidity and complex flavor profiles. Indonesian beans from Sumatra and Java are known for their earthy, full-bodied character with low acidity. Understanding these regional differences can help you select beans that match your taste preferences.",
+    "author": "Michael Johnson",
+    "authorId": "2",
+    "publishedAt": "2024-05-05T10:30:00Z",
+    "updatedAt": "2024-05-05T10:30:00Z",
+    "coverImage": "/images/coffee-origins.jpg",
+    "tags": ["origins", "coffee", "beans"]
+  },
+  {
+    "id": "3",
+    "title": "The Perfect Coffee Shop Experience",
+    "slug": "perfect-coffee-shop-experience",
+    "excerpt": "What makes a coffee shop truly special? Explore the elements that create an unforgettable coffee experience.",
+    "content": "A truly exceptional coffee shop is more than just good coffee—it's an experience that engages all the senses. The aroma of freshly ground beans should greet you at the door. The interior design should balance comfort with aesthetic appeal, offering various seating options for different needs. Background music should enhance the atmosphere without overwhelming conversation. Baristas should be knowledgeable and passionate about coffee, ready to guide customers through the menu. And of course, the coffee itself must be consistently excellent, with options to satisfy both traditionalists and adventurous palates. The best coffee shops create a sense of community, becoming a 'third place' between home and work where people can connect, work, or simply enjoy a moment of solitude with a perfect cup.",
+    "author": "Sarah Williams",
+    "authorId": "3",
+    "publishedAt": "2024-05-10T09:15:00Z",
+    "updatedAt": "2024-05-10T09:15:00Z",
+    "coverImage": "/images/coffee-shop.jpg",
+    "tags": ["coffee shop", "experience", "design"]
+  }
+]

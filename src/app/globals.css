@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F4EDE1; /* Latte Cream */
+  --foreground: #333333; /* Koyu Kömür */
+  --primary: #4B2E2A;    /* Espresso */
+  --secondary: #F4EDE1;  /* Latte Cream */
+  --accent: #D9915F;     /* Terracotta */
+  --natural: #A3B18A;    /* Yeşil Misket */
+  --neutral: #333333;    /* Koyu Kömür */
+  --overlay: rgba(0,0,0,0.5); /* Siyah, %50 Opak */
+}
+
+/* Tema değişkenleri */
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hero ve Banner alanları için overlay */
+.hero-overlay {
+  position: relative;
+}
+
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay);
+  z-index: 1;
+}
+
+.hero-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Kartlar ve banner'lar için metin arka planı */
+.card-text-overlay {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* Metin gölgesi */
+.text-with-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
