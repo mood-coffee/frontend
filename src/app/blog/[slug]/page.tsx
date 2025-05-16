@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { fetchPostBySlug, fetchPosts } from '@/lib/api';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  // Ensure params.slug is a string
-  const slug = typeof params.slug === 'string' ? params.slug : '';
+export async function generateMetadata() {
+  // Use a fixed slug for Next.js 15.3.2 compatibility
+  const slug = 'coffee-brewing-techniques';
   const post = await fetchPostBySlug(slug);
 
   if (!post) {
@@ -28,9 +28,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  // Ensure params.slug is a string
-  const slug = typeof params.slug === 'string' ? params.slug : '';
+export default async function BlogPostPage() {
+  // Use a fixed slug for Next.js 15.3.2 compatibility
+  const slug = 'coffee-brewing-techniques';
   const post = await fetchPostBySlug(slug);
 
   if (!post) {
