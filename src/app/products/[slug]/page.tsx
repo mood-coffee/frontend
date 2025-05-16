@@ -1,29 +1,15 @@
-import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
-import { fetchProductBySlug } from '@/lib/api';
-import { ProductDetailClient } from '@/components/products/ProductDetailClient';
+import { ProductDetailWrapper } from '@/components/products/ProductDetailWrapper';
 
-export async function generateMetadata() {
-  // For Next.js 15.3.2, we need to use a fixed product to avoid params issues
-  const product = await fetchProductBySlug('ethiopian-yirgacheffe');
+export const metadata = {
+  title: 'Product | Mood Coffee',
+  description: 'Premium coffee product from Mood Coffee',
+};
 
-  return {
-    title: product ? `${product.name} | Mood Coffee` : 'Product | Mood Coffee',
-    description: product ? product.description : 'Premium coffee product',
-  };
-}
-
-export default async function ProductPage() {
-  // For Next.js 15.3.2, we need to use a fixed product to avoid params issues
-  const product = await fetchProductBySlug('ethiopian-yirgacheffe');
-
-  if (!product) {
-    notFound();
-  }
-
+export default function ProductPage() {
   return (
     <Container className="py-16">
-      <ProductDetailClient product={product} />
+      <ProductDetailWrapper />
     </Container>
   );
 }
