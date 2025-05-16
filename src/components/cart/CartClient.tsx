@@ -17,12 +17,12 @@ export function CartClient() {
       setCartItems(cart);
       setLoading(false);
     };
-    
+
     loadCart();
-    
+
     // Add event listener for storage changes
     window.addEventListener('storage', loadCart);
-    
+
     return () => {
       window.removeEventListener('storage', loadCart);
     };
@@ -67,7 +67,7 @@ export function CartClient() {
             <div className="bg-white rounded-lg shadow-sm border border-natural p-6">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-primary">Cart Items</h2>
-                <button 
+                <button
                   onClick={handleClearCart}
                   className="text-sm text-accent hover:text-accent/80 transition-colors"
                 >
@@ -95,14 +95,14 @@ export function CartClient() {
                       </div>
                       <div className="flex flex-wrap justify-between items-center mt-4">
                         <div className="flex items-center space-x-2">
-                          <button 
+                          <button
                             onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
                             className="w-8 h-8 flex items-center justify-center rounded-full border border-natural text-neutral hover:bg-natural/10 transition-colors"
                           >
                             -
                           </button>
                           <span className="text-neutral">{item.quantity}</span>
-                          <button 
+                          <button
                             onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
                             className="w-8 h-8 flex items-center justify-center rounded-full border border-natural text-neutral hover:bg-natural/10 transition-colors"
                           >
@@ -111,7 +111,7 @@ export function CartClient() {
                         </div>
                         <div className="flex items-center space-x-4">
                           <span className="text-accent font-medium">${(item.price * item.quantity).toFixed(2)}</span>
-                          <button 
+                          <button
                             onClick={() => handleRemoveItem(item.id)}
                             className="text-neutral hover:text-primary transition-colors"
                           >
@@ -161,7 +161,7 @@ export function CartClient() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
           <h2 className="text-2xl font-bold text-primary mb-2">Your cart is empty</h2>
-          <p className="text-neutral mb-6">Looks like you haven't added any coffee to your cart yet.</p>
+          <p className="text-neutral mb-6">Looks like you haven&apos;t added any coffee to your cart yet.</p>
           <Button href="/products">
             Browse Products
           </Button>
