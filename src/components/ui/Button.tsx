@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
@@ -42,13 +42,11 @@ export function Button({
 
   if (href) {
     // Remove button-specific props that shouldn't be passed to Link
-    const { ...linkProps } = props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { type, ...linkProps } = props;
 
     return (
-      <Link 
-        href={href} 
-        className={buttonClasses} 
-        {...(linkProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <Link href={href} className={buttonClasses}>
         {children}
       </Link>
     );
@@ -56,6 +54,7 @@ export function Button({
 
   return (
     <button
+      type="button"
       className={buttonClasses}
       {...props}
     >

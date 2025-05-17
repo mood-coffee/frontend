@@ -13,23 +13,26 @@ export function HeaderClient() {
 
   // Load cart item count from localStorage on component mount
   useEffect(() => {
-    const updateCartCount = () => {
-      const count = getCartItemCount();
-      setItemCount(count);
-    };
-    
-    updateCartCount();
-    
-    // Add event listener for storage changes
-    window.addEventListener('storage', updateCartCount);
-    
-    // Check for cart updates every second
-    const interval = setInterval(updateCartCount, 1000);
-    
-    return () => {
-      window.removeEventListener('storage', updateCartCount);
-      clearInterval(interval);
-    };
+    // Ensure this only runs in the browser
+    if (typeof window !== 'undefined') {
+      const updateCartCount = () => {
+        const count = getCartItemCount();
+        setItemCount(count);
+      };
+
+      updateCartCount();
+
+      // Add event listener for storage changes
+      window.addEventListener('storage', updateCartCount);
+
+      // Check for cart updates every second
+      const interval = setInterval(updateCartCount, 1000);
+
+      return () => {
+        window.removeEventListener('storage', updateCartCount);
+        clearInterval(interval);
+      };
+    }
   }, []);
 
   return (
