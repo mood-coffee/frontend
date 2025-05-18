@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { CartItem as CartItemType, useCart } from '@/context/CartContext';
 import logger from '@/lib/logger';
 
@@ -78,9 +79,11 @@ export function CartItem({ item }: CartItemProps) {
       {/* Ürün görseli */}
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-gray-100">
         {item.image ? (
-          <img
+          <Image
             src={item.image}
             alt={item.name}
+            width={96}
+            height={96}
             className="h-full w-full object-cover object-center"
           />
         ) : (

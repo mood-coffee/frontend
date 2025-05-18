@@ -40,12 +40,6 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isInitialized, setIsInitialized] = useState(false);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
-
-  // Force refresh method
-  const forceRefresh = () => {
-    setRefreshTrigger(prev => prev + 1);
-  };
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -107,15 +101,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         }];
       }
     });
-    
-    forceRefresh();
   };
 
   // Remove an item from the cart
   const removeItem = (id: string) => {
     console.log(`[CartContext] Removing item ${id} from cart`);
     setItems(prevItems => prevItems.filter(item => item.id !== id));
-    forceRefresh();
   };
 
   // Update item quantity
@@ -132,15 +123,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         item.id === id ? { ...item, quantity } : item
       )
     );
-    
-    forceRefresh();
   };
 
   // Clear the entire cart
   const clearCart = () => {
     console.log('[CartContext] Clearing cart');
     setItems([]);
-    forceRefresh();
   };
 
   // Calculate cart totals (recalculated on each render)
