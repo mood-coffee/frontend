@@ -1,10 +1,10 @@
 import { Container } from '@/components/ui/Container';
 import { fetchProducts } from '@/lib/api';
-import { ProductsClient } from '@/components/products/ProductsClient';
+import { ProductList } from '@/features/products/components/ProductList';
 
 export const metadata = {
   title: 'Products | Mood Coffee',
-  description: 'Explore our selection of premium coffee beans from around the world.',
+  description: 'Browse our carefully selected coffee beans from around the world.',
 };
 
 export default async function ProductsPage() {
@@ -27,7 +27,7 @@ export default async function ProductsPage() {
       </div>
 
       <Container className="py-24">
-        <ProductsClient initialProducts={products} />
+        <ProductList initialProducts={products} />
       </Container>
     </>
   );

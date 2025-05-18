@@ -2,9 +2,15 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { fetchPostBySlug, fetchPosts } from '@/lib/api';
 
-export async function generateMetadata() {
-  // Use a fixed slug for Next.js 15.3.2 compatibility
-  const slug = 'coffee-brewing-techniques';
+interface PageParams {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+// Doğrudan blog yazısını getirip metadata'yı oluşturan fonksiyon
+export async function generateMetadata({ params }: PageParams) {
+  const { slug } = await params;
   const post = await fetchPostBySlug(slug);
 
   if (!post) {
@@ -20,6 +26,7 @@ export async function generateMetadata() {
   };
 }
 
+// Statik sayfaları oluşturan fonksiyon
 export async function generateStaticParams() {
   const posts = await fetchPosts();
 
@@ -28,9 +35,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage() {
-  // Use a fixed slug for Next.js 15.3.2 compatibility
-  const slug = 'coffee-brewing-techniques';
+// Ana sayfa bileşeni
+export default async function BlogPostPage({ params }: PageParams) {
+  const { slug } = await params;
   const post = await fetchPostBySlug(slug);
 
   if (!post) {

@@ -41,12 +41,12 @@ export function Button({
   );
 
   if (href) {
-    // Remove button-specific props that shouldn't be passed to Link
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { type, ...linkProps } = props;
-
+    // For Link component, we don't want to pass button-specific props
     return (
-      <Link href={href} className={buttonClasses}>
+      <Link 
+        href={href} 
+        className={buttonClasses}
+      >
         {children}
       </Link>
     );

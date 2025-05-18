@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { Product } from '@/types/product';
-import { ProductDetailClient } from './ProductDetailClient';
+import { ProductDetail } from './ProductDetail';
 import { fetchProductBySlug } from '@/lib/api';
+import logger from '@/lib/logger';
 
-export function ProductDetailWrapper() {
+interface ProductDetailWrapperProps {
+  slug?: string;
+}
+
+export function ProductDetailWrapper({ slug: initialSlug }: ProductDetailWrapperProps = {}) {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -13,22 +18,31 @@ export function ProductDetailWrapper() {
     const loadProduct = async () => {
       setLoading(true);
       try {
-        // Get the slug from the URL
-        const pathname = window.location.pathname;
-        const slug = pathname.split('/').pop() || 'ethiopian-yirgacheffe';
+        // Slug prop yoksa URL'den al
+        let slug = initialSlug;
+        if (!slug) {
+          const pathname = window.location.pathname;
+          slug = pathname.split('/').pop() || '';
+        }
+        
+        // URL'den alınan slug boşsa, varsayılan bir değer kullan
+        if (!slug) {
+          logger.warn('No slug provided for ProductDetailWrapper');
+          return;
+        }
         
         // Fetch the product by slug
         const productData = await fetchProductBySlug(slug);
         setProduct(productData);
       } catch (error) {
-        console.error('Error loading product:', error);
+        logger.error('Error loading product', error as Error);
       } finally {
         setLoading(false);
       }
     };
     
     loadProduct();
-  }, []);
+  }, [initialSlug]);
 
   if (loading) {
     return (
@@ -46,5 +60,5 @@ export function ProductDetailWrapper() {
     );
   }
 
-  return <ProductDetailClient product={product} />;
-}
+  return <ProductDetail product={product} />;
+} 

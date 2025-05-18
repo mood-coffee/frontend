@@ -3,37 +3,38 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
-import { getCartItemCount } from '@/lib/mockApi';
+import { useCart } from '@/context/CartContext';
 
 /**
  * Client-side Header component with navigation and cart count
  */
 export function HeaderClient() {
-  const [itemCount, setItemCount] = useState(0);
+  const { itemCount } = useCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Load cart item count from localStorage on component mount
+  // Close menu when ESC key is pressed
   useEffect(() => {
-    // Ensure this only runs in the browser
-    if (typeof window !== 'undefined') {
-      const updateCartCount = () => {
-        const count = getCartItemCount();
-        setItemCount(count);
-      };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
 
-      updateCartCount();
-
-      // Add event listener for storage changes
-      window.addEventListener('storage', updateCartCount);
-
-      // Check for cart updates every second
-      const interval = setInterval(updateCartCount, 1000);
-
-      return () => {
-        window.removeEventListener('storage', updateCartCount);
-        clearInterval(interval);
-      };
-    }
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
   }, []);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="py-6 bg-primary text-white border-b border-natural">
@@ -85,7 +86,11 @@ export function HeaderClient() {
                 </span>
               )}
             </Link>
-            <button className="md:hidden text-white">
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -104,6 +109,87 @@ export function HeaderClient() {
           </div>
         </div>
       </Container>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-50 bg-primary">
+          <div className="flex flex-col h-full p-4">
+            <div className="flex justify-between items-center mb-8">
+              <Link 
+                href="/" 
+                className="text-2xl font-bold tracking-tight text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Mood
+              </Link>
+              <button 
+                onClick={() => setIsMenuOpen(false)} 
+                className="text-white"
+                aria-label="Close menu"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  strokeWidth={1.5} 
+                  stroke="currentColor" 
+                  className="w-6 h-6"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    d="M6 18L18 6M6 6l12 12" 
+                  />
+                </svg>
+              </button>
+            </div>
+            <nav className="flex flex-col space-y-6 text-center">
+              <Link 
+                href="/" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                href="/products" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Products
+              </Link>
+              <Link 
+                href="/blog" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link 
+                href="/cart" 
+                className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Cart ({itemCount})
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

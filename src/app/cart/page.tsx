@@ -1,12 +1,15 @@
 import { Container } from '@/components/ui/Container';
-import { CartClient } from '@/components/cart/CartClient';
+import { CartList } from '@/features/cart/components/CartList';
+import { CartSummary } from '@/features/cart/components/CartSummary';
 
 export const metadata = {
   title: 'Shopping Cart | Mood Coffee',
   description: 'Review your cart and checkout.',
 };
 
-
+// Ensure this page is not cached and always revalidated on each visit
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default function CartPage() {
   return (
@@ -25,7 +28,16 @@ export default function CartPage() {
       </div>
 
       <Container className="py-24">
-        <CartClient />
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2">
+              <CartList />
+            </div>
+            <div className="lg:col-span-1">
+              <CartSummary />
+            </div>
+          </div>
+        </div>
       </Container>
     </>
   );

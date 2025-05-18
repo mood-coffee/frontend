@@ -1,10 +1,10 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import { Product } from '@/types/product';
 import logger from '@/lib/logger';
 
-// Cart item interface
+// Cart item tipi
 export interface CartItem {
   id: string;
   name: string;
@@ -16,38 +16,27 @@ export interface CartItem {
   image?: string;
 }
 
-// Shape of our context value
-interface CartContextValue {
-  items: CartItem[];
-  addItem: (product: Product, quantity: number) => void;
-  removeItem: (id: string) => void;
-  updateQuantity: (id: string, quantity: number) => void;
-  clearCart: () => void;
-  itemCount: number;
-  subtotal: number;
-  shipping: number;
-  total: number;
-  isInitialized: boolean;
-}
-
-// LocalStorage key
+// LocalStorage anahtarı
 const CART_STORAGE_KEY = 'mood-coffee-cart';
 
-// Create the context with a default value
-const CartContext = createContext<CartContextValue | undefined>(undefined);
-
-// Provider component
-export function CartProvider({ children }: { children: ReactNode }) {
+/**
+ * Cart yönetimi için custom hook
+ * 
+ * Bu hook, sepet işlemlerini yönetir ve localStorage ile senkronize eder.
+ * İleride gerçek bir API ile entegrasyon için hazır bir arayüz sağlar.
+ */
+export function useCart() {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isInitialized, setIsInitialized] = useState(false);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
-
-  // Force refresh method
-  const forceRefresh = () => {
-    setRefreshTrigger(prev => prev + 1);
+  
+  // Debug logger
+  const logDebug = (message: string, data?: unknown) => {
+    if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+      console.log(`[Cart] ${message}`, data || '');
+    }
   };
 
-  // Load cart from localStorage on mount
+  // Load cart from localStorage on initial render
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
@@ -56,13 +45,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (savedCart) {
         const parsedItems = JSON.parse(savedCart);
         setItems(parsedItems);
-        console.log('[CartContext] Loaded cart from localStorage', parsedItems);
+        logDebug('Loaded cart from localStorage', parsedItems);
       }
+      
+      setIsInitialized(true);
     } catch (error) {
       logger.error('Failed to load cart from localStorage', error as Error);
+      setIsInitialized(true);
     }
-    
-    setIsInitialized(true);
   }, []);
 
   // Save cart to localStorage whenever items change
@@ -71,7 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     
     try {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-      console.log('[CartContext] Saved cart to localStorage', items);
+      logDebug('Saved cart to localStorage', items);
     } catch (error) {
       logger.error('Failed to save cart to localStorage', error as Error);
     }
@@ -79,7 +69,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Add an item to the cart
   const addItem = (product: Product, quantity: number) => {
-    console.log(`[CartContext] Adding product ${product.id} to cart`, { product, quantity });
+    logDebug(`Adding product ${product.id} to cart`, { product, quantity });
     
     setItems(prevItems => {
       // Check if item already exists in cart
@@ -107,50 +97,43 @@ export function CartProvider({ children }: { children: ReactNode }) {
         }];
       }
     });
-    
-    forceRefresh();
   };
 
   // Remove an item from the cart
   const removeItem = (id: string) => {
-    console.log(`[CartContext] Removing item ${id} from cart`);
+    logDebug(`Removing item ${id} from cart`);
     setItems(prevItems => prevItems.filter(item => item.id !== id));
-    forceRefresh();
   };
 
   // Update item quantity
   const updateQuantity = (id: string, quantity: number) => {
-    console.log(`[CartContext] Updating quantity for item ${id} to ${quantity}`);
+    logDebug(`Updating quantity for item ${id} to ${quantity}`);
     
     if (quantity <= 0) {
       removeItem(id);
       return;
     }
     
-    setItems(prevItems => 
-      prevItems.map(item => 
+    setItems(prevItems => {
+      return prevItems.map(item => 
         item.id === id ? { ...item, quantity } : item
-      )
-    );
-    
-    forceRefresh();
+      );
+    });
   };
 
   // Clear the entire cart
   const clearCart = () => {
-    console.log('[CartContext] Clearing cart');
+    logDebug('Clearing cart');
     setItems([]);
-    forceRefresh();
   };
 
-  // Calculate cart totals (recalculated on each render)
+  // Calculate cart totals
   const itemCount = items.reduce((total, item) => total + item.quantity, 0);
   const subtotal = items.reduce((total, item) => total + (item.price * item.quantity), 0);
   const shipping = items.length > 0 ? 5.99 : 0;
   const total = subtotal + shipping;
 
-  // Create context value object
-  const contextValue: CartContextValue = {
+  return {
     items,
     addItem,
     removeItem,
@@ -162,21 +145,4 @@ export function CartProvider({ children }: { children: ReactNode }) {
     total,
     isInitialized
   };
-
-  return (
-    <CartContext.Provider value={contextValue}>
-      {children}
-    </CartContext.Provider>
-  );
-}
-
-// Custom hook to use the cart context
-export function useCart() {
-  const context = useContext(CartContext);
-  
-  if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider');
-  }
-  
-  return context;
-}
+} 

@@ -1,34 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Product } from '@/types/product';
-import { addToCart } from '@/lib/mockApi';
+import { useCart } from '@/context/CartContext';
+import logger from '@/lib/logger';
 
-interface ProductDetailClientProps {
+interface ProductDetailProps {
   product: Product;
 }
 
-export function ProductDetailClient({ product }: ProductDetailClientProps) {
+export function ProductDetail({ product }: ProductDetailProps) {
+  const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-    setAddedToCart(true);
+  const handleAddToCart = useCallback(() => {
+    if (isUpdating) return;
     
-    // Reset the "Added to cart" message after 3 seconds
-    setTimeout(() => {
-      setAddedToCart(false);
-    }, 3000);
-  };
+    try {
+      setIsUpdating(true);
+      addItem(product, quantity);
+      setAddedToCart(true);
+      
+      // Reset the "Added to cart" message after 3 seconds
+      setTimeout(() => {
+        setAddedToCart(false);
+        setIsUpdating(false);
+      }, 3000);
+    } catch (error) {
+      logger.error('Failed to add product to cart', error as Error);
+      setIsUpdating(false);
+    }
+  }, [product, quantity, addItem, isUpdating]);
 
-  const incrementQuantity = () => {
+  const incrementQuantity = useCallback(() => {
     setQuantity(prev => prev + 1);
-  };
+  }, []);
 
-  const decrementQuantity = () => {
+  const decrementQuantity = useCallback(() => {
     setQuantity(prev => (prev > 1 ? prev - 1 : 1));
-  };
+  }, []);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -84,7 +96,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             <div className="flex items-center border border-natural rounded-md">
               <button 
                 onClick={decrementQuantity}
-                className="px-3 py-1 text-neutral hover:text-primary transition-colors"
+                disabled={isUpdating}
+                className="px-3 py-1 text-neutral hover:text-primary transition-colors disabled:opacity-50"
                 aria-label="Decrease quantity"
               >
                 -
@@ -92,7 +105,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
               <span className="px-4 py-1 text-neutral">{quantity}</span>
               <button 
                 onClick={incrementQuantity}
-                className="px-3 py-1 text-neutral hover:text-primary transition-colors"
+                disabled={isUpdating}
+                className="px-3 py-1 text-neutral hover:text-primary transition-colors disabled:opacity-50"
                 aria-label="Increase quantity"
               >
                 +
@@ -102,7 +116,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           
           <button 
             onClick={handleAddToCart}
-            className="w-full bg-accent hover:bg-accent/90 text-white py-3 px-4 rounded-md font-medium transition-colors"
+            disabled={isUpdating}
+            className="w-full bg-accent hover:bg-accent/90 text-white py-3 px-4 rounded-md font-medium transition-colors disabled:opacity-50"
           >
             {addedToCart ? 'Added to Cart!' : 'Add to Cart'}
           </button>
@@ -116,4 +131,4 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       </div>
     </div>
   );
-}
+} 

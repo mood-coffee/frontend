@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata = {
   title: 'Contact Us | Mood Coffee',
@@ -24,64 +24,7 @@ export default function ContactPage() {
 
       <Container className="py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-natural">
-            <h2 className="text-2xl font-bold text-primary mb-6">Get in Touch</h2>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-neutral mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="block w-full px-4 py-3 rounded-md border border-natural bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-neutral mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="block w-full px-4 py-3 rounded-md border border-natural bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-neutral mb-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="block w-full px-4 py-3 rounded-md border border-natural bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="What is this regarding?"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-neutral mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  className="block w-full px-4 py-3 rounded-md border border-natural bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="Your message here..."
-                />
-              </div>
-              <div>
-                <Button size="lg" className="w-full">
-                  Send Message
-                </Button>
-              </div>
-            </form>
-          </div>
+          <ContactForm />
 
           <div>
             <h2 className="text-2xl font-bold text-primary mb-6">Contact Information</h2>
