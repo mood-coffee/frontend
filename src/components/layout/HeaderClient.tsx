@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { useCart } from '@/context/CartContext';
 
@@ -40,8 +41,15 @@ export function HeaderClient() {
     <header className="py-6 bg-primary text-white border-b border-natural">
       <Container>
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight text-white">
-            Mood
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/mood-logo.jpg" 
+              alt="Mood Coffee Logo" 
+              width={40} 
+              height={40} 
+              className="rounded-full"
+            />
+            <span className="text-2xl font-bold tracking-tight text-white">Mood</span>
           </Link>
           <nav className="hidden md:flex space-x-8">
             <Link href="/" className="text-sm font-medium text-white hover:text-accent transition-colors">
@@ -117,10 +125,17 @@ export function HeaderClient() {
             <div className="flex justify-between items-center mb-8">
               <Link 
                 href="/" 
-                className="text-2xl font-bold tracking-tight text-white"
+                className="flex items-center gap-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Mood
+                <Image 
+                  src="/mood-logo.jpg" 
+                  alt="Mood Coffee Logo" 
+                  width={40} 
+                  height={40} 
+                  className="rounded-full"
+                />
+                <span className="text-2xl font-bold tracking-tight text-white">Mood</span>
               </Link>
               <button 
                 onClick={() => setIsMenuOpen(false)} 

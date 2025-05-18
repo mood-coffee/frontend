@@ -29,12 +29,18 @@ export function HeroSection() {
           </div>
           <div className="mt-12 lg:mt-0 relative">
             <div className="aspect-w-5 aspect-h-6 lg:aspect-w-4 lg:aspect-h-5 relative">
-              {/* Placeholder for image - in a real project, you would use a real image */}
-              <div className="w-full h-[500px] bg-secondary rounded-lg overflow-hidden">
-                {/* This would be replaced with a real image in production */}
-                <div className="w-full h-full flex items-center justify-center text-neutral">
-                  Coffee Image Placeholder
-                </div>
+              <div className="w-full h-[500px] rounded-lg overflow-hidden flex items-center justify-center bg-black">
+                {/* High-quality coffee roasting video that loops continuously */}
+                <video
+                  className="w-full h-full object-cover rounded-lg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/coffee-roasting-high-quality.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
