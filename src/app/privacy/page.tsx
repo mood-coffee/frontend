@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             
             <div className="prose prose-lg max-w-none text-neutral">
               <p className="text-base leading-7 mb-6">
-                Mood Coffee olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, 
+                Mood Coffee olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) kapsamında, 
                 kişisel verilerinizin gizliliğini ve güvenliğini önemsiyoruz. Bu kapsamda, internet sitemizi 
                 kullandığınızda tarafımıza ilettiğiniz kişisel verilerin hangi amaçlarla işlendiğini, nasıl 
                 korunduğunu ve haklarınızı aşağıda bilgilerinize sunarız.
@@ -90,14 +90,14 @@ export default function PrivacyPage() {
               </p>
 
               <h3 className="text-xl font-semibold text-primary mt-8 mb-4">6. KVKK Kapsamındaki Haklarınız</h3>
-              <p className="mb-4">KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+              <p className="mb-4">KVKK&apos;nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
                 <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
                 <li>Verilerin işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
                 <li>Verilerin yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
                 <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
-                <li>KVKK'da öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme,</li>
+                <li>KVKK&apos;da öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme,</li>
                 <li>Bu işlemlerin üçüncü kişilere bildirilmesini isteme,</li>
                 <li>İşlenen verilerin yalnızca otomatik sistemler ile analiz edilmesi sonucunda aleyhe bir sonucun ortaya çıkmasına itiraz etme,</li>
                 <li>Kanuna aykırı veri işlenmesi nedeniyle zarara uğramanız halinde tazminat talep etme</li>
