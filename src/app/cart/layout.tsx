@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Shopping Cart | Mood Coffee',
-  description: 'Review and manage your coffee selections in your shopping cart.',
+  title: 'Alışveriş Sepeti | Mood Coffee',
+  description: 'Alışveriş sepetinizdeki kahve seçimlerinizi inceleyin ve yönetin.',
 }
 
 export default function CartLayout({

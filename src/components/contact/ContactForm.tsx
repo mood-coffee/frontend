@@ -34,26 +34,26 @@ export function ContactForm() {
     
     // Name validation
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'İsim gereklidir';
     }
 
     // Email validation
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'E-posta gereklidir';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = 'Geçersiz e-posta adresi';
     }
 
     // Subject validation
     if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
+      newErrors.subject = 'Konu gereklidir';
     }
 
     // Message validation
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Mesaj gereklidir';
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message should be at least 10 characters long';
+      newErrors.message = 'Mesaj en az 10 karakter olmalıdır';
     }
 
     setErrors(newErrors);
@@ -100,18 +100,18 @@ export function ContactForm() {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm border border-natural">
-      <h2 className="text-2xl font-bold text-primary mb-6">Get in Touch</h2>
+      <h2 className="text-2xl font-bold text-primary mb-6">İletişime Geçin</h2>
       
       {submitSuccess && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-md">
-          Thank you for your message! We&apos;ll get back to you soon.
+          Mesajınız için teşekkür ederiz! En kısa sürede size geri döneceğiz.
         </div>
       )}
       
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-neutral mb-1">
-            Name
+            İsim
           </label>
           <input
             type="text"
@@ -120,7 +120,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             className={`block w-full px-4 py-3 rounded-md border ${errors.name ? 'border-red-500' : 'border-natural'} bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent`}
-            placeholder="Your name"
+            placeholder="Adınız"
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -129,7 +129,7 @@ export function ContactForm() {
         
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-neutral mb-1">
-            Email
+            E-posta
           </label>
           <input
             type="email"
@@ -138,7 +138,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             className={`block w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500' : 'border-natural'} bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent`}
-            placeholder="your.email@example.com"
+            placeholder="eposta@ornek.com"
           />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -147,7 +147,7 @@ export function ContactForm() {
         
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-neutral mb-1">
-            Subject
+            Konu
           </label>
           <input
             type="text"
@@ -156,7 +156,7 @@ export function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             className={`block w-full px-4 py-3 rounded-md border ${errors.subject ? 'border-red-500' : 'border-natural'} bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent`}
-            placeholder="What is this regarding?"
+            placeholder="Neyle ilgili?"
           />
           {errors.subject && (
             <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
@@ -165,7 +165,7 @@ export function ContactForm() {
         
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-neutral mb-1">
-            Message
+            Mesaj
           </label>
           <textarea
             id="message"
@@ -174,7 +174,7 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             className={`block w-full px-4 py-3 rounded-md border ${errors.message ? 'border-red-500' : 'border-natural'} bg-white text-neutral shadow-sm focus:border-accent focus:ring-1 focus:ring-accent`}
-            placeholder="Your message here..."
+            placeholder="Mesajınızı buraya yazın..."
           />
           {errors.message && (
             <p className="mt-1 text-sm text-red-600">{errors.message}</p>
@@ -189,7 +189,7 @@ export function ContactForm() {
             variant="primary"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+            {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
           </Button>
         </div>
       </form>

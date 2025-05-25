@@ -18,16 +18,16 @@ export default function Error({ error, reset }: ErrorProps) {
   return (
     <Container className="py-24 text-center">
       <h1 className="text-6xl font-bold text-gray-900 mb-4">500</h1>
-      <h2 className="text-2xl font-semibold text-gray-700 mb-8">Something went wrong</h2>
+      <h2 className="text-2xl font-semibold text-gray-700 mb-8">Bir şeyler ters gitti</h2>
       <p className="text-gray-600 mb-12 max-w-md mx-auto">
-        We apologize for the inconvenience. Our team has been notified of this issue.
+        Rahatsızlık için özür dileriz. Ekibimiz bu sorundan haberdar edildi.
       </p>
       <div className="flex justify-center gap-4">
         <Button onClick={reset} size="lg">
-          Try Again
+          Tekrar Dene
         </Button>
         <Button href="/" variant="outline" size="lg">
-          Return Home
+          Ana Sayfaya Dön
         </Button>
       </div>
     </Container>

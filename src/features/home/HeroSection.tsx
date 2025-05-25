@@ -11,19 +11,19 @@ export function HeroSection() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-with-shadow">
-              <span className="block">Exceptional Coffee</span>
-              <span className="block text-secondary">Extraordinary Moments</span>
+              <span className="block">Olağanüstü Kahve</span>
+              <span className="block text-secondary">Eşsiz Anlar</span>
             </h1>
             <p className="mt-6 text-lg text-secondary max-w-3xl">
-              Carefully sourced and expertly roasted coffee beans delivered to your door.
-              Experience the perfect cup, every morning.
+              Özenle seçilmiş ve ustalıkla kavrulmuş kahve çekirdekleri kapınıza teslim.
+              Her sabah mükemmel fincanı deneyimleyin.
             </p>
             <div className="mt-10 flex gap-4">
               <Button size="lg" href="/products">
-                Shop Now
+                Hemen Satın Al
               </Button>
               <Button size="lg" variant="outline" href="/about">
-                Learn More
+                Daha Fazla Bilgi
               </Button>
             </div>
           </div>
@@ -39,7 +39,7 @@ export function HeroSection() {
                   playsInline
                 >
                   <source src="/coffee-roasting-high-quality.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
+                  Tarayıcınız video etiketini desteklemiyor.
                 </video>
               </div>
             </div>

@@ -3,8 +3,8 @@ import { CartList } from '@/features/cart/components/CartList';
 import { CartSummary } from '@/features/cart/components/CartSummary';
 
 export const metadata = {
-  title: 'Shopping Cart | Mood Coffee',
-  description: 'Review your cart and checkout.',
+  title: 'Alışveriş Sepeti | Mood Coffee',
+  description: 'Sepetinizi inceleyin ve ödeme yapın.',
 };
 
 // Ensure this page is not cached and always revalidated on each visit
@@ -18,10 +18,10 @@ export default function CartPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Your Cart
+              Sepetiniz
             </h1>
             <p className="mt-6 text-lg leading-8 text-neutral">
-              Review your items and proceed to checkout.
+              Ürünlerinizi inceleyin ve ödeme işlemine geçin.
             </p>
           </div>
         </Container>
