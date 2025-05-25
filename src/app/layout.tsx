@@ -5,6 +5,7 @@ import "./globals.css";
 import { HeaderClient } from "@/components/layout/HeaderClient";
 import { Footer } from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { KvkkBanner } from "@/components/KvkkBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
+          <KvkkBanner />
         </CartProvider>
       </body>
     </html>

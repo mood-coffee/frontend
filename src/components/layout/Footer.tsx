@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-accent">Mood</h3>
             <p className="text-sm text-secondary mb-4">
-              Crafting exceptional coffee experiences since 2024.
+              2024'ten beri eşsiz kahve deneyimleri yaratıyoruz.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-secondary hover:text-accent transition-colors">
@@ -46,31 +46,31 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Shop</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Mağaza</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/products" className="text-sm text-secondary hover:text-accent transition-colors">
-                  All Products
+                  Tüm Ürünler
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=single-origin" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Single Origin
+                  Tek Köken
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=blend" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Blends
+                  Karışımlar
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Şirket</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors">
-                  About
+                  Hakkımızda
                 </Link>
               </li>
               <li>
@@ -80,22 +80,22 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Contact
+                  İletişim
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Legal</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Yasal</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/privacy" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Privacy
+                  Gizlilik
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Terms
+                  Şartlar
                 </Link>
               </li>
             </ul>
@@ -103,7 +103,7 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-natural">
           <p className="text-sm text-secondary text-center">
-            &copy; {new Date().getFullYear()} Mood Coffee. All rights reserved.
+            &copy; {new Date().getFullYear()} Mood Coffee. Tüm hakları saklıdır.
           </p>
         </div>
       </Container>

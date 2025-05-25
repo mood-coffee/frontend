@@ -16,10 +16,10 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Featured Products
+            Öne Çıkan Ürünler
           </h2>
           <p className="mt-4 text-lg text-neutral max-w-2xl mx-auto">
-            Discover our selection of premium coffee beans, carefully sourced from the world&apos;s best growing regions.
+            Dünyanın en iyi yetişme bölgelerinden özenle seçilmiş premium kahve çekirdeklerimizi keşfedin.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -28,7 +28,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden">
                 {/* Placeholder for product image - in a real project, you would use a real image */}
                 <div className="w-full h-[300px] bg-secondary flex items-center justify-center text-neutral">
-                  Product Image Placeholder
+                  Ürün Görseli Yer Tutucu
                 </div>
               </div>
               <div className="p-6">
@@ -42,7 +42,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
                     </h3>
                     <p className="mt-1 text-sm text-neutral">{product.origin}</p>
                   </div>
-                  <p className="text-lg font-medium text-accent">${product.price}</p>
+                  <p className="text-lg font-medium text-accent">₺{product.price}</p>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {product.flavorNotes.slice(0, 3).map((note) => (
@@ -60,7 +60,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
         </div>
         <div className="mt-12 text-center">
           <Button href="/products" size="lg">
-            View All Products
+            Tüm Ürünleri Görüntüle
           </Button>
         </div>
       </Container>

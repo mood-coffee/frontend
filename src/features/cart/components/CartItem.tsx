@@ -88,7 +88,7 @@ export function CartItem({ item }: CartItemProps) {
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-gray-400 text-xs">
-            No Image
+            Görsel Yok
           </div>
         )}
       </div>
@@ -98,7 +98,7 @@ export function CartItem({ item }: CartItemProps) {
         <div>
           <div className="flex justify-between text-base font-medium text-primary">
             <h3>{item.name}</h3>
-            <p className="ml-4">${item.price.toFixed(2)}</p>
+            <p className="ml-4">₺{item.price.toFixed(2)}</p>
           </div>
           <div className="mt-1 text-sm text-gray-500">
             <span>{item.weight}</span>
@@ -137,7 +137,7 @@ export function CartItem({ item }: CartItemProps) {
               onClick={handleRemove}
               className="font-medium text-accent hover:text-accent/80"
             >
-              Remove
+              Kaldır
             </button>
           </div>
         </div>

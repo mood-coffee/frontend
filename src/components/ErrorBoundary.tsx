@@ -43,12 +43,12 @@ export class ErrorBoundary extends Component<Props, State> {
 
       return (
         <Container className="py-24 text-center">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-8">Something went wrong</h2>
+          <h2 className="text-2xl font-semibold text-gray-700 mb-8">Bir şeyler ters gitti</h2>
           <p className="text-gray-600 mb-12 max-w-md mx-auto">
-            {this.state.error?.message || 'An unexpected error occurred'}
+            {this.state.error?.message || 'Beklenmeyen bir hata oluştu'}
           </p>
           <Button onClick={() => this.setState({ hasError: false, error: null })} size="lg">
-            Try Again
+            Tekrar Dene
           </Button>
         </Container>
       );

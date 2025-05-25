@@ -2,8 +2,8 @@ import { Container } from '@/components/ui/Container';
 import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata = {
-  title: 'Contact Us | Mood Coffee',
-  description: 'Get in touch with our team. We&apos;d love to hear from you!',
+  title: 'İletişim | Mood Coffee',
+  description: 'Ekibimizle iletişime geçin. Sizden haber almayı çok isteriz!',
 };
 
 export default function ContactPage() {
@@ -13,10 +13,10 @@ export default function ContactPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Contact Us
+              İletişim
             </h1>
             <p className="mt-6 text-lg leading-8 text-neutral">
-              We&apos;d love to hear from you. Get in touch with our team.
+              Sizden haber almayı çok isteriz. Ekibimizle iletişime geçin.
             </p>
           </div>
         </Container>
@@ -27,7 +27,7 @@ export default function ContactPage() {
           <ContactForm />
 
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-6">Contact Information</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">İletişim Bilgileri</h2>
             <div className="space-y-8 bg-white p-6 rounded-lg shadow-sm border border-natural">
               <div className="flex items-start">
                 <div className="flex-shrink-0 bg-accent/10 p-3 rounded-full mr-4">
@@ -37,11 +37,11 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Address</h3>
+                  <h3 className="text-lg font-semibold text-primary">Adres</h3>
                   <p className="mt-2 text-neutral">
-                    123 Coffee Street<br />
-                    San Francisco, CA 94103<br />
-                    United States
+                    Kahve Sokağı No: 123<br />
+                    İstanbul, Türkiye 34000<br />
+                    Türkiye
                   </p>
                 </div>
               </div>
@@ -52,10 +52,10 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Email</h3>
+                  <h3 className="text-lg font-semibold text-primary">E-posta</h3>
                   <p className="mt-2 text-neutral">
-                    <a href="mailto:hello@moodcoffee.com" className="hover:text-accent transition-colors">
-                      hello@moodcoffee.com
+                    <a href="mailto:merhaba@moodcoffee.com" className="hover:text-accent transition-colors">
+                      merhaba@moodcoffee.com
                     </a>
                   </p>
                 </div>
@@ -67,10 +67,10 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Phone</h3>
+                  <h3 className="text-lg font-semibold text-primary">Telefon</h3>
                   <p className="mt-2 text-neutral">
-                    <a href="tel:+14155551234" className="hover:text-accent transition-colors">
-                      +1 (415) 555-1234
+                    <a href="tel:+902121234567" className="hover:text-accent transition-colors">
+                      +90 (212) 123 45 67
                     </a>
                   </p>
                 </div>
@@ -82,11 +82,11 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-primary">Hours</h3>
+                  <h3 className="text-lg font-semibold text-primary">Çalışma Saatleri</h3>
                   <p className="mt-2 text-neutral">
-                    Monday - Friday: 9am - 5pm<br />
-                    Saturday: 10am - 4pm<br />
-                    Sunday: Closed
+                    Pazartesi - Cuma: 09:00 - 17:00<br />
+                    Cumartesi: 10:00 - 16:00<br />
+                    Pazar: Kapalı
                   </p>
                 </div>
               </div>

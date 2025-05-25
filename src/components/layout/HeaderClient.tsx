@@ -53,26 +53,26 @@ export function HeaderClient() {
           </Link>
           <nav className="hidden md:flex space-x-8">
             <Link href="/" className="text-sm font-medium text-white hover:text-accent transition-colors">
-              Home
+              Ana Sayfa
             </Link>
             <Link href="/about" className="text-sm font-medium text-white hover:text-accent transition-colors">
-              About
+              Hakkımızda
             </Link>
             <Link href="/products" className="text-sm font-medium text-white hover:text-accent transition-colors">
-              Products
+              Ürünler
             </Link>
             <Link href="/blog" className="text-sm font-medium text-white hover:text-accent transition-colors">
               Blog
             </Link>
             <Link href="/contact" className="text-sm font-medium text-white hover:text-accent transition-colors">
-              Contact
+              İletişim
             </Link>
           </nav>
           <div className="flex items-center space-x-4">
             <Link
               href="/cart"
               className="relative text-white hover:text-accent transition-colors"
-              aria-label="Shopping Cart"
+              aria-label="Alışveriş Sepeti"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ export function HeaderClient() {
             <button 
               className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle mobile menu"
+              aria-label="Mobil menüyü aç/kapat"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ export function HeaderClient() {
               <button 
                 onClick={() => setIsMenuOpen(false)} 
                 className="text-white"
-                aria-label="Close menu"
+                aria-label="Menüyü kapat"
               >
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -164,21 +164,21 @@ export function HeaderClient() {
                 className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Ana Sayfa
               </Link>
               <Link 
                 href="/about" 
                 className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                Hakkımızda
               </Link>
               <Link 
                 href="/products" 
                 className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Products
+                Ürünler
               </Link>
               <Link 
                 href="/blog" 
@@ -192,14 +192,14 @@ export function HeaderClient() {
                 className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                İletişim
               </Link>
               <Link 
                 href="/cart" 
                 className="text-xl font-medium text-white hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Cart ({itemCount})
+                Sepet ({itemCount})
               </Link>
             </nav>
           </div>

@@ -17,10 +17,10 @@ export function CartList() {
   if (!hasItems) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-medium text-gray-900 mb-4">Your cart is empty</h2>
-        <p className="text-gray-600 mb-8">Looks like you haven&apos;t added any items to your cart yet.</p>
+        <h2 className="text-2xl font-medium text-gray-900 mb-4">Sepetiniz boş</h2>
+        <p className="text-gray-600 mb-8">Henüz sepetinize hiç ürün eklememişsiniz.</p>
         <Button href="/products" variant="primary">
-          Continue Shopping
+          Alışverişe Devam Et
         </Button>
       </div>
     );
@@ -30,14 +30,14 @@ export function CartList() {
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-medium text-primary">
-          Shopping Cart ({itemCount} {itemCount === 1 ? 'item' : 'items'})
+          Alışveriş Sepeti ({itemCount} {itemCount === 1 ? 'ürün' : 'ürün'})
         </h2>
         <button
           type="button"
           onClick={clearCart}
           className="text-sm font-medium text-accent hover:text-accent/80"
         >
-          Clear Cart
+          Sepeti Temizle
         </button>
       </div>
 

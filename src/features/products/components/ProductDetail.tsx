@@ -47,7 +47,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
       <div>
         {/* Placeholder for product image - in a real project, you would use a real image */}
         <div className="w-full h-[500px] bg-secondary rounded-lg flex items-center justify-center text-neutral">
-          Product Image Placeholder
+          Ürün Görseli Yer Tutucu
         </div>
         <div className="mt-4 grid grid-cols-4 gap-2">
           {product.images.map((_, index) => (
@@ -55,7 +55,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               key={index}
               className="h-24 bg-secondary rounded flex items-center justify-center text-neutral text-xs"
             >
-              Image {index + 1}
+              Görsel {index + 1}
             </div>
           ))}
         </div>
@@ -63,21 +63,21 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
       <div>
         <h1 className="text-3xl font-bold text-primary">{product.name}</h1>
-        <p className="mt-2 text-sm text-neutral">Origin: {product.origin}</p>
-        <p className="mt-2 text-sm text-neutral">Roast Level: {product.roastLevel}</p>
+        <p className="mt-2 text-sm text-neutral">Köken: {product.origin}</p>
+        <p className="mt-2 text-sm text-neutral">Kavurma Seviyesi: {product.roastLevel}</p>
 
         <div className="mt-4 flex items-center">
-          <p className="text-2xl font-bold text-accent">${product.price}</p>
+          <p className="text-2xl font-bold text-accent">₺{product.price}</p>
           <p className="ml-2 text-sm text-neutral">/ {product.weight}</p>
         </div>
 
         <div className="mt-6">
-          <h2 className="text-lg font-semibold text-primary">Description</h2>
+          <h2 className="text-lg font-semibold text-primary">Açıklama</h2>
           <p className="mt-2 text-neutral">{product.description}</p>
         </div>
 
         <div className="mt-6">
-          <h2 className="text-lg font-semibold text-primary">Flavor Notes</h2>
+          <h2 className="text-lg font-semibold text-primary">Lezzet Notları</h2>
           <div className="mt-2 flex flex-wrap gap-2">
             {product.flavorNotes.map((note) => (
               <span
@@ -92,13 +92,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
         <div className="mt-8 space-y-4">
           <div className="flex items-center">
-            <span className="mr-4 text-neutral">Quantity:</span>
+            <span className="mr-4 text-neutral">Miktar:</span>
             <div className="flex items-center border border-natural rounded-md">
               <button 
                 onClick={decrementQuantity}
                 disabled={isUpdating}
                 className="px-3 py-1 text-neutral hover:text-primary transition-colors disabled:opacity-50"
-                aria-label="Decrease quantity"
+                aria-label="Miktarı azalt"
               >
                 -
               </button>
@@ -107,7 +107,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 onClick={incrementQuantity}
                 disabled={isUpdating}
                 className="px-3 py-1 text-neutral hover:text-primary transition-colors disabled:opacity-50"
-                aria-label="Increase quantity"
+                aria-label="Miktarı artır"
               >
                 +
               </button>
@@ -119,12 +119,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
             disabled={isUpdating}
             className="w-full bg-accent hover:bg-accent/90 text-white py-3 px-4 rounded-md font-medium transition-colors disabled:opacity-50"
           >
-            {addedToCart ? 'Added to Cart!' : 'Add to Cart'}
+            {addedToCart ? 'Sepete Eklendi!' : 'Sepete Ekle'}
           </button>
           
           {addedToCart && (
             <div className="text-sm text-accent text-center animate-pulse">
-              Product added to your cart!
+              Ürün sepetinize eklendi!
             </div>
           )}
         </div>
