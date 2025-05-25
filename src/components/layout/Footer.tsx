@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-accent">Mood</h3>
             <p className="text-sm text-secondary mb-4">
-              2024'ten beri eşsiz kahve deneyimleri yaratıyoruz.
+              2024&apos;ten beri eşsiz kahve deneyimleri yaratıyoruz.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-secondary hover:text-accent transition-colors">

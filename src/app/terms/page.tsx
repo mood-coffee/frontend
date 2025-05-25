@@ -43,7 +43,7 @@ export default function TermsPage() {
               <h3 className="text-xl font-semibold text-primary mt-8 mb-4">2. Fikri Mülkiyet Hakları</h3>
               <p className="mb-6">
                 Bu web sitesinde yer alan tüm içerik, tasarım, logo, metin, görsel ve diğer materyaller 
-                Mood Coffee'nin fikri mülkiyetidir ve telif hakkı yasaları ile korunmaktadır. İzin 
+                Mood Coffee&apos;nin fikri mülkiyetidir ve telif hakkı yasaları ile korunmaktadır. İzin 
                 alınmadan kopyalanamaz, çoğaltılamaz veya dağıtılamaz.
               </p>
 
