@@ -1,19 +1,29 @@
 /**
  * Product type definition
  */
+
+export interface PriceWeight {
+  weight: string;
+  price: number;
+}
+
 export interface Product {
-  id: string;
+  id: number;
   name: string;
   slug: string;
   description: string;
-  price: number;
+  priceWeight: PriceWeight[];
   currency: string;
-  weight: string;
   inStock: boolean;
+  isActive: boolean;
   category: string;
   origin: string;
-  roastLevel: string;
-  flavorNotes: string[];
+  acidity: number | null;
+  intensity: number | null;
+  processing: string;
+  growingAltitude: string | null;
+  roastLevel: string | null;
+  flavorNotes: string[] | null;
   images: string[];
   featured: boolean;
 }

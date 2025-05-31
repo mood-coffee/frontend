@@ -327,3 +327,193 @@ export default async function ProductPage({ params }: PageParams) {
 - **Kapsamlı Test Coverage**: Jest ve React Testing Library ile test kapsamı artırma
 - **Merkezi Loglama**: Hata yakalama ve izleme altyapısı
 - **CI/CD Pipeline**: Otomatik test ve deploy süreçleri
+
+## Değişiklik Geçmişi
+
+### 2024-12-27 – Updated: Sepet Ürün Kimliği Bug'ının Düzeltilmesi
+
+- CartContext'te aynı ürünün farklı gramajlarının ayrı sepet öğeleri olarak işlenmesi sorunu çözüldü
+- CartItem interface'ine cartItemId (ürün ID + gramaj kombinasyonu) benzersiz kimlik alanı eklendi
+- addItem fonksiyonunda mevcut ürün kontrolü cartItemId ile yapılacak şekilde güncellendi
+- removeItem ve updateQuantity fonksiyonları cartItemId kullanacak şekilde revize edildi
+- CartItem bileşeninde sepet işlemleri cartItemId ile yapılacak şekilde güncellendi
+- Artık aynı ürünün farklı gramajları (100g, 250g, 1kg) ayrı sepet satırları olarak görünüyor
+- Her gramaj için ayrı fiyat, miktar ve toplam hesaplama doğru şekilde çalışıyor
+
+### 2024-12-27 – Updated: İletişim Sayfasına WhatsApp Entegrasyonu
+
+- Contact sayfasına WhatsApp iletişim bölümü eklendi
+- WhatsApp'a doğrudan yönlendiren link entegrasyonu (https://wa.me/905316922045)
+- WhatsApp resmi ikonu ve "💬 WhatsApp'tan mesaj gönderin" rehberlik mesajı eklendi
+- Yeni sekmede açılım ve güvenlik özellikleri (target="_blank", rel="noopener noreferrer")
+- İletişim kanalları çeşitlendirildi: telefon, e-posta, adres, WhatsApp
+- Kullanıcıların tercih ettikleri iletişim kanalını seçebilmeleri sağlandı
+
+### 2024-12-27 – Updated: İletişim Sayfasına Google Maps Entegrasyonu
+
+- Contact sayfasındaki adres bölümüne Google Maps linki entegrasyonu eklendi
+- Adres alanı artık tıklanabilir ve yeni sekmede Google Maps konumunu açıyor
+- Gerçek iş yeri adresi ile güncelleme: "Feyzullah Mahallesi, Serap Caddesi, No: 9, 34843 Maltepe/İstanbul"
+- Kullanıcı deneyimi iyileştirmesi: "📍 Haritada görüntülemek için tıklayın" rehberlik mesajı eklendi
+- Hover efektleri ve accessible link özellikleri (target="_blank", rel="noopener noreferrer") eklendi
+
+### 2024-12-27 – Updated: Sepet Badge Pozisyon Düzeltmesi
+
+- HeaderClient bileşeninde sepet badge pozisyonlama sorunu düzeltildi
+- Badge'in "Sepet" yazısının üstüne çıkmasını engellemek için badge konumu iyileştirildi
+- Sepet ikonu için ayrı relative container oluşturularak badge pozisyonu sadece ikona göre ayarlandı
+- Desktop navigasyonda sepet badge artık sadece sepet ikonunun sağ üst köşesine konumlanıyor
+- Kullanıcı deneyimi iyileştirildi: badge artık metni kapsamıyor
+
+### 2024-12-27 – Updated: Fiyat Hesaplama Bug'larının Düzeltilmesi
+
+- ProductDetail bileşeninde sepete ekleme butonunda toplam fiyat hesaplama düzeltildi
+- Miktar değiştiğinde buton fiyatının (birim fiyat × miktar) olarak güncellenmesi sağlandı
+- CartItem bileşeninde ürün toplam fiyatının miktar ile çarpılarak gösterilmesi düzeltildi
+- Sepet öğelerinde hem toplam fiyat hem de birim fiyat bilgisi gösterilmesi eklendi
+- Kullanıcı deneyimi iyileştirildi: fiyat hesaplamaları gerçek zamanlı olarak güncelleniyor
+
+### 2024-12-27 – Updated: Google Drive Görsel URL'lerinin Entegrasyonu
+
+- Google Drive share URL'lerini direkt görüntülenebilir URL'lere dönüştüren utility fonksiyon eklendi
+- `src/lib/utils/imageUtils.ts` modülü ile URL conversion sistemi oluşturuldu
+- Next.js Image component için `drive.google.com` hostname desteği eklendi
+- Tüm ürün bileşenlerinde (ProductDetail, ProductCard, FeaturedProducts, CartItem) Google Drive URL işleme entegrasyonu
+- `convertGoogleDriveUrl` fonksiyonu ile `https://drive.google.com/file/d/ID/view` formatını `https://drive.google.com/uc?export=view&id=ID` formatına dönüştürme
+- Gerçek ürün görsellerinin production ortamında güvenilir şekilde yüklenmesi sağlandı
+- Placeholder fallback sistemi ile backward compatibility korundu
+
+### 2024-12-27 – Updated: Navigation Icons ve Sepet Text Ekleme
+
+- Ana navigasyon tablarına (Ana Sayfa, Hakkımızda, Ürünler, Blog, İletişim) görsel iconlar eklendi
+- Sepet ikonu yanına "Sepet" text'i eklendi (hem desktop hem mobile)
+- Heroicons SVG'leri ile tutarlı görsel dil sağlandı
+- Responsive tasarım uygulandı (desktop'ta w-4 h-4, mobile'da w-5 h-5 icon boyutları)
+- Flexbox ile icon ve text arasında uygun spacing (gap-2, gap-3) uygulandı
+- HeaderClient.tsx bileşeninde navigasyon kullanıcı deneyimi iyileştirildi
+
+### 2024-12-27 – Updated: Favicon Güncelleme ve Optimizasyon
+
+- Eski favicon (src/app/favicon.ico) kaldırıldı
+- Yeni favicon dosyaları public/favicon/ klasörüne organize edildi
+- Çoklu boyut desteği (16x16, 32x32, 120x120, 512x512) eklendi
+- layout.tsx'e kapsamlı favicon metadata yapılandırması eklendi
+- Browser uyumluluğu için farklı boyut seçenekleri sağlandı
+- public/favicon.ico olarak standart favicon konfigürasyonu yapıldı
+
+### 2024-12-27 – Updated: Ürün Görselleri İmplementasyonu ve Optimizasyon
+
+- products.json dosyasında görsel yolları düzeltildi (absolute → relative paths)
+- Tüm ürün bileşenlerinde placeholder'lar kaldırılarak gerçek görseller entegre edildi
+- Next.js Image bileşeni ile optimized görsel yükleme implementasyonu
+- ProductDetail sayfasında gelişmiş galeri sistemi (thumbnail navigation)
+- Hover efektleri ve geçiş animasyonları eklendi
+- Responsive görsel boyutlandırma ve performans optimizasyonu sağlandı
+- El Salvador ürünü için /product-images/el-salvador.jpg görsel yolu aktive edildi
+
+### 2024-12-27 – Updated: Excel Verilerinden Ürün Migrasyonu ve Yapısal Dönüşüm
+
+- Product type definition kapsamlı olarak güncellendiği, legacy single price/weight sisteminden modern priceWeight array yapısına geçiş
+- 11 yeni premium kahve ürünü eklendi (Brazil Rio Minas, Mogiana, Nicaragua San Jose, El Salvador Shasta, Guatemala Huehuetenango, Ethiopia Yirgacheffe, Honduras San Marcos, Kenya AA Nyeri, Uganda Bugisu)
+- Çoklu gramaj seçenekleri sistemi (100g, 250g, 1000g) ile dinamik fiyatlama
+- Gelişmiş kahve özellikleri: asidite/yoğunluk skorları, işleme yöntemi, yetişme yüksekliği
+- ProductDetail bileşeninde interaktif gramaj seçimi ve gerçek zamanlı fiyat güncelleme
+- ProductCard ve FeaturedProducts bileşenlerinde akıllı fiyat gösterimi (en düşük fiyat + seçenek sayısı)
+- CartContext backward compatibility ile legacy product desteği
+- TRY para birimi standardizasyonu ve Türkçe içerik lokalizasyonu
+
+### 2024-12-27 – Updated: Google Drive Görsel Linklerinin Placeholder ile Değiştirilmesi
+
+- Google Drive share linklerinin Next.js Image component ile uyumsuzluk sorunu çözüldü
+- SVG tabanlı placeholder image sistemi oluşturuldu (/product-images/placeholder.jpg)
+- Tüm product bileşenlerinde (ProductDetail, ProductCard, FeaturedProducts, CartItem) error handling eklendi
+- Image yüklenme hatalarında otomatik placeholder gösterimi (onError handlers)
+- Kahve temalı placeholder tasarımı (☕ emoji) ile tutarlı görsel deneyim
+- Türkçe placeholder metinleri ve responsive placeholder layout
+- Production build ve development server stabilitysi sağlandı
+
+### 2024-12-27 – Updated: CartList React Key Prop Bug'ının Düzeltilmesi
+
+- CartList bileşeninde React key prop sorunu çözüldü
+- Map fonksiyonunda item.id yerine item.cartItemId kullanımına geçiş yapıldı
+- "Encountered two children with the same key" hatasının ortadan kaldırılması
+- Aynı ürün ID'sine sahip farklı gramajlı ürünler için benzersiz key garantisi
+- React component identity ve update performansının iyileştirilmesi
+- Sepet öğelerinin doğru şekilde render edilmesi ve re-render davranışının düzgün çalışması
+
+### 2024-12-27 – Updated: ProductDetail Miktar Reset Bug'ının Düzeltilmesi
+
+- ProductDetail component'inde sepete ekleme sonrası quantity reset sorunu çözüldü
+- handleAddToCart fonksiyonuna setQuantity(1) eklenerek automatic reset sağlandı
+- Kullanıcı deneyimi iyileştirildi: sepete ekleme sonrası quantity otomatik 1'e dönüyor
+- Sürekli alışveriş senaryolarında kullanıcının quantity'yi manuel reset etme ihtiyacı kaldırıldı
+- UX best practice uygulaması: form state'inin işlem sonrası temizlenmesi
+- Success message ile senkronize quantity reset davranışı
+
+### 2024-12-27 – Updated: Footer Sosyal Medya Linklerinin Güncellenmesi
+
+- Footer component'inde sosyal medya linklerinin güncellenmesi
+- Instagram linkinin placeholder'dan gerçek hesaba yönlendirilmesi (https://www.instagram.com/moodcoffeeandmore/)
+- Twitter ikonu ve linkinin kaldırılarak Google Maps entegrasyonu eklenmesi
+- Google Maps linki ile konum tabanlı navigasyon (https://maps.app.goo.gl/n76fDfpQ6d76AN4J8)
+- Güvenlik özelliklerinin eklenmesi: target="_blank" ve rel="noopener noreferrer"
+- Accessibility iyileştirmeleri: screen reader desteği ve updated sr-only metinleri
+- Harita ikonu SVG tasarımı ile tutarlı görsel dil korunması
+
+### 2024-12-27 – Updated: Footer Ürün Kategori Linklerinin Düzeltilmesi
+
+- Footer component'inde ürün kategorisi linklerinin doğru sayfalara yönlendirmesi sağlandı
+- "Çekirdek Kahve" linkinin single_origin kategorisine yönlendirilmesi (/products?category=single_origin)
+- "Türk Kahvesi" linkinin turkish_coffee kategorisine yönlendirilmesi (/products?category=turkish_coffee)
+- Yanlış "blend" kategori referanslarının gerçek kategori adlarıyla değiştirilmesi
+- "Ekipman" kategorisinin kaldırılması (henüz mevcut ürün yok)
+- Footer navigasyonunun mevcut ürün veritabanındaki gerçek kategorilerle tutarlılığının sağlanması
+- Kullanıcıların footer'dan kategori linklerine tıkladığında doğru filtrelenmiş ürün listesini görmesi
+
+### 2024-12-27 – Updated: Ürün Kategori Filtreleme Sistemi Bug'ının Düzeltilmesi
+
+- ProductList component'inde URL-based kategori filtreleme sistemi implementasyonu
+- useSearchParams hook'u ile URL'den category parametresini okuma ve state'e yansıtma
+- URL değiştiğinde otomatik kategori güncelleme ve filtreleme işlevselliği
+- handleCategoryChange fonksiyonunda browser history API ile URL güncelleme
+- Kategori button'larında yanlış karşılaştırmaların düzeltilmesi (single-origin → single_origin, blend → turkish_coffee)
+- Active state gösterimlerinin doğru kategori ile eşleştirilmesi
+- "Ekipman" kategori linkinin Footer'a geri eklenmesi
+- URL-based navigation ile sayfa yenileme sonrası filtre durumunun korunması
+- Browser back/forward button'ları ile kategori geçişlerinin çalışması
+- Footer kategori linklerinden ürün sayfasına geçişte doğru filtreleme çalışması
+
+### 2024-12-27 – Updated: Header Navigasyonuna Kafe Menüsü Link Entegrasyonu
+
+- HeaderClient component'ine kafe menüsü external link entegrasyonu
+- "Ürünler" ile "Blog" arasına "Kafe Menüsü" linkinin mantıklı yerleşimi
+- External menü platformu entegrasyonu (https://menu-online.co/doodcoffee/5/menu)
+- target="_blank" ve rel="noopener noreferrer" güvenlik özellikleri
+- Book/menu ikonu ile görsel tutarlılık sağlanması
+- Desktop ve mobile navigasyon için responsive tasarım
+- Çevrimiçi mağaza ile fiziksel kafe menüsü arasında net kullanıcı ayrımı
+- Mobile menü otomatik kapanma işlevselliği
+- Hover efektleri ve transition animasyonları ile tutarlı UX
+
+### 2024-12-27 – Updated: Header Sticky Positioning Implementasyonu
+
+- HeaderClient bileşeninde position: sticky CSS özelliği uygulandı
+- Header'ın scroll yapıldığında sayfanın üstünde sabit kalması sağlandı
+- z-index: 50 ile header'ın diğer content'lerin üstünde konumlanması
+- Tailwind CSS sticky top-0 z-50 sınıfları ile clean implementation
+- Navigation ve sepet icon'una scroll sırasında erişim sürekli korundu
+- Uzun sayfalarda (ürün detayları, blog postları) kullanıcı deneyimi iyileştirildi
+- Header background (bg-primary) ve border'ın sticky modda korunması
+- Responsive tasarım uyumluluğu: hem desktop hem mobile sticky davranış
+
+### 2024-12-27 – Updated: Products Sayfası Suspense Boundary Bug'ının Düzeltilmesi
+
+- Next.js 15.3.2'de useSearchParams hook'u Suspense boundary gerektirmesi sorunu çözüldü
+- Products page'inde ProductList component'i Suspense ile sarmalandı
+- "useSearchParams() should be wrapped in a suspense boundary" build error'ı ortadan kaldırıldı
+- ProductListFallback loading component'i ile graceful loading state eklendi
+- Production build'inin başarıyla tamamlanması sağlandı (24/24 static pages generated)
+- Client component'lerde useSearchParams kullanımının Next.js 15 standartlarına uyumlu hale getirilmesi
+- Static generation ve server-side rendering performance'ının korunması
+- SEO optimizasyonları ve meta data generation'ının etkilenmemesi
+- Loading transition'ları ile kullanıcı deneyimi iyileştirilmesi

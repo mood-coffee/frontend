@@ -20,6 +20,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mood Coffee",
   description: "Crafting exceptional coffee experiences",
+  icons: {
+    icon: [
+      { url: '/favicon/16x16.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon/32x32.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon/120x120.ico', sizes: '120x120', type: 'image/x-icon' },
+      { url: '/favicon/512x512.ico', sizes: '512x512', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

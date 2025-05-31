@@ -1,11 +1,20 @@
 import { Container } from '@/components/ui/Container';
 import { fetchProducts } from '@/lib/api';
 import { ProductList } from '@/features/products/components/ProductList';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Products | Mood Coffee',
   description: 'Browse our carefully selected coffee beans from around the world.',
 };
+
+function ProductListFallback() {
+  return (
+    <div className="flex justify-center items-center h-64">
+      <p className="text-neutral">Loading products...</p>
+    </div>
+  );
+}
 
 export default async function ProductsPage() {
   // Fetch all products
@@ -27,7 +36,9 @@ export default async function ProductsPage() {
       </div>
 
       <Container className="py-24">
-        <ProductList initialProducts={products} />
+        <Suspense fallback={<ProductListFallback />}>
+          <ProductList initialProducts={products} />
+        </Suspense>
       </Container>
     </>
   );

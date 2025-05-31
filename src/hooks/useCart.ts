@@ -6,13 +6,13 @@ import logger from '@/lib/logger';
 
 // Cart item tipi
 export interface CartItem {
-  id: string;
+  id: number;
   name: string;
   price: number;
   quantity: number;
   slug: string;
   weight: string;
-  roastLevel: string;
+  roastLevel: string | null;
   image?: string;
 }
 
@@ -68,7 +68,7 @@ export function useCart() {
   }, [items, isInitialized]);
 
   // Add an item to the cart
-  const addItem = (product: Product, quantity: number) => {
+  const addItem = (product: Product & { price?: number; weight?: string }, quantity: number) => {
     logDebug(`Adding product ${product.id} to cart`, { product, quantity });
     
     setItems(prevItems => {
@@ -85,13 +85,17 @@ export function useCart() {
         return updatedItems;
       } else {
         // If new, add to cart
+        // Handle both legacy (price/weight props) and new (priceWeight array) formats
+        const price = product.price || product.priceWeight[0].price;
+        const weight = product.weight || (product.priceWeight[0].weight + 'g');
+        
         return [...prevItems, {
           id: product.id,
           name: product.name,
-          price: product.price,
+          price: price,
           quantity,
           slug: product.slug,
-          weight: product.weight,
+          weight: weight,
           roastLevel: product.roastLevel,
           image: product.images?.[0]
         }];
@@ -100,13 +104,13 @@ export function useCart() {
   };
 
   // Remove an item from the cart
-  const removeItem = (id: string) => {
+  const removeItem = (id: number) => {
     logDebug(`Removing item ${id} from cart`);
     setItems(prevItems => prevItems.filter(item => item.id !== id));
   };
 
   // Update item quantity
-  const updateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = (id: number, quantity: number) => {
     logDebug(`Updating quantity for item ${id} to ${quantity}`);
     
     if (quantity <= 0) {

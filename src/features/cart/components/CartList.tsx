@@ -43,7 +43,7 @@ export function CartList() {
 
       <div className="divide-y divide-gray-200">
         {items.map((item) => (
-          <CartItem key={item.id} item={item} />
+          <CartItem key={item.cartItemId} item={item} />
         ))}
       </div>
     </div>

@@ -6,22 +6,23 @@ import logger from '@/lib/logger';
 
 // Cart item interface
 export interface CartItem {
-  id: string;
+  id: number;
+  cartItemId: string; // Unique identifier combining product ID and weight
   name: string;
   price: number;
   quantity: number;
   slug: string;
   weight: string;
-  roastLevel: string;
+  roastLevel: string | null;
   image?: string;
 }
 
 // Shape of our context value
 interface CartContextValue {
   items: CartItem[];
-  addItem: (product: Product, quantity: number) => void;
-  removeItem: (id: string) => void;
-  updateQuantity: (id: string, quantity: number) => void;
+  addItem: (product: Product & { price?: number; weight?: string }, quantity: number) => void;
+  removeItem: (cartItemId: string) => void;
+  updateQuantity: (cartItemId: string, quantity: number) => void;
   clearCart: () => void;
   itemCount: number;
   subtotal: number;
@@ -72,12 +73,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, isInitialized]);
 
   // Add an item to the cart
-  const addItem = (product: Product, quantity: number) => {
+  const addItem = (product: Product & { price?: number; weight?: string }, quantity: number) => {
     console.log(`[CartContext] Adding product ${product.id} to cart`, { product, quantity });
     
+    // Handle both legacy (price/weight props) and new (priceWeight array) formats
+    const price = product.price || product.priceWeight[0].price;
+    const weight = product.weight || (product.priceWeight[0].weight + 'g');
+    const cartItemId = `${product.id}-${weight}`;
+    
     setItems(prevItems => {
-      // Check if item already exists in cart
-      const existingItemIndex = prevItems.findIndex(item => item.id === product.id);
+      // Check if item already exists in cart (same product ID and weight)
+      const existingItemIndex = prevItems.findIndex(item => item.cartItemId === cartItemId);
       
       if (existingItemIndex >= 0) {
         // If exists, update quantity
@@ -91,11 +97,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         // If new, add to cart
         return [...prevItems, {
           id: product.id,
+          cartItemId,
           name: product.name,
-          price: product.price,
+          price: price,
           quantity,
           slug: product.slug,
-          weight: product.weight,
+          weight: weight,
           roastLevel: product.roastLevel,
           image: product.images?.[0]
         }];
@@ -104,23 +111,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   // Remove an item from the cart
-  const removeItem = (id: string) => {
-    console.log(`[CartContext] Removing item ${id} from cart`);
-    setItems(prevItems => prevItems.filter(item => item.id !== id));
+  const removeItem = (cartItemId: string) => {
+    console.log(`[CartContext] Removing item ${cartItemId} from cart`);
+    setItems(prevItems => prevItems.filter(item => item.cartItemId !== cartItemId));
   };
 
   // Update item quantity
-  const updateQuantity = (id: string, quantity: number) => {
-    console.log(`[CartContext] Updating quantity for item ${id} to ${quantity}`);
+  const updateQuantity = (cartItemId: string, quantity: number) => {
+    console.log(`[CartContext] Updating quantity for item ${cartItemId} to ${quantity}`);
     
     if (quantity <= 0) {
-      removeItem(id);
+      removeItem(cartItemId);
       return;
     }
     
     setItems(prevItems => 
       prevItems.map(item => 
-        item.id === id ? { ...item, quantity } : item
+        item.cartItemId === cartItemId ? { ...item, quantity } : item
       )
     );
   };
