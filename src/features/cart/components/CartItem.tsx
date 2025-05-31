@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { CartItem as CartItemType, useCart } from '@/context/CartContext';
+import { convertGoogleDriveUrl } from '@/lib/utils/imageUtils';
 import logger from '@/lib/logger';
 
 interface CartItemProps {
@@ -13,6 +14,12 @@ export function CartItem({ item }: CartItemProps) {
   const { updateQuantity, removeItem } = useCart();
   const [isUpdating, setIsUpdating] = useState(false);
   const [localQuantity, setLocalQuantity] = useState(item.quantity);
+  
+  // Process Google Drive URL for cart item image
+  const processedImage = item.image ? convertGoogleDriveUrl(item.image) : null;
+  
+  // Simple placeholder data URL
+  const placeholderImage = "data:image/svg+xml,%3Csvg width='96' height='96' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='96' height='96' fill='%23f3f4f6'/%3E%3Ctext x='48' y='52' text-anchor='middle' fill='%236b7280' font-family='Arial' font-size='12'%3E☕%3C/text%3E%3C/svg%3E";
   
   // Sync with parent's item quantity when it changes
   useEffect(() => {
@@ -27,7 +34,7 @@ export function CartItem({ item }: CartItemProps) {
       const newQuantity = localQuantity + 1;
       setLocalQuantity(newQuantity); // Update local state immediately for UI responsiveness
       
-      updateQuantity(item.id, newQuantity);
+      updateQuantity(item.cartItemId, newQuantity);
       
       // Brief delay to prevent rapid successive updates
       setTimeout(() => {
@@ -48,7 +55,7 @@ export function CartItem({ item }: CartItemProps) {
       const newQuantity = localQuantity - 1;
       setLocalQuantity(newQuantity); // Update local state immediately for UI responsiveness
       
-      updateQuantity(item.id, newQuantity);
+      updateQuantity(item.cartItemId, newQuantity);
       
       // Brief delay to prevent rapid successive updates
       setTimeout(() => {
@@ -66,7 +73,7 @@ export function CartItem({ item }: CartItemProps) {
     
     try {
       setIsUpdating(true);
-      removeItem(item.id);
+      removeItem(item.cartItemId);
       // Component will unmount, no need to reset isUpdating
     } catch (error) {
       logger.error('Failed to remove cart item', error as Error);
@@ -78,19 +85,13 @@ export function CartItem({ item }: CartItemProps) {
     <div className="flex py-6 border-b border-gray-200 last:border-b-0">
       {/* Ürün görseli */}
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-gray-100">
-        {item.image ? (
-          <Image
-            src={item.image}
-            alt={item.name}
-            width={96}
-            height={96}
-            className="h-full w-full object-cover object-center"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center text-gray-400 text-xs">
-            Görsel Yok
-          </div>
-        )}
+        <Image
+          src={processedImage || placeholderImage}
+          alt={item.name}
+          width={96}
+          height={96}
+          className="h-full w-full object-cover object-center"
+        />
       </div>
 
       {/* Ürün bilgileri */}
@@ -98,12 +99,14 @@ export function CartItem({ item }: CartItemProps) {
         <div>
           <div className="flex justify-between text-base font-medium text-primary">
             <h3>{item.name}</h3>
-            <p className="ml-4">₺{item.price.toFixed(2)}</p>
+            <p className="ml-4">₺{(item.price * localQuantity).toFixed(2)}</p>
           </div>
           <div className="mt-1 text-sm text-gray-500">
             <span>{item.weight}</span>
             <span className="mx-2">|</span>
             <span>{item.roastLevel}</span>
+            <span className="mx-2">|</span>
+            <span>Birim: ₺{item.price.toFixed(2)}</span>
           </div>
         </div>
 

@@ -3,15 +3,19 @@
   "categories": [
     {
       "id": "all",
-      "name": "All Products"
+      "name": "Tüm Ürünler"
     },
     {
-      "id": "single-origin",
-      "name": "Single Origin"
+      "id": "single_origin",
+      "name": "Çekirdek Kahve"
     },
     {
-      "id": "blend",
-      "name": "Blends"
+      "id": "turkish_coffee",
+      "name": "Türk Kahvesi"
+    },
+    {
+      "id": "equipment",
+      "name": "Ekipman"
     }
   ]
 }

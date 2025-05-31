@@ -5,13 +5,13 @@ import { fetchProducts } from './api';
 
 // Define the cart item type
 export interface CartItem {
-  id: string;
+  id: number;
   name: string;
   price: number;
   quantity: number;
   slug: string;
   weight: string;
-  roastLevel: string;
+  roastLevel: string | null;
   image?: string;
 }
 
@@ -48,7 +48,7 @@ export function saveCart(cart: CartItem[]): void {
 }
 
 // Add item to cart
-export function addToCart(product: Product, quantity: number): void {
+export function addToCart(product: Product & { price?: number; weight?: string }, quantity: number): void {
   const cart = getCart();
 
   // Check if the product is already in the cart
@@ -59,13 +59,17 @@ export function addToCart(product: Product, quantity: number): void {
     cart[existingItemIndex].quantity += quantity;
   } else {
     // If the product doesn't exist, add it to the cart
+    // Handle both legacy (price/weight props) and new (priceWeight array) formats
+    const price = product.price || product.priceWeight[0].price;
+    const weight = product.weight || (product.priceWeight[0].weight + 'g');
+    
     cart.push({
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: price,
       quantity,
       slug: product.slug,
-      weight: product.weight,
+      weight: weight,
       roastLevel: product.roastLevel,
       image: product.images?.[0]
     });
@@ -75,7 +79,7 @@ export function addToCart(product: Product, quantity: number): void {
 }
 
 // Update item quantity in cart
-export function updateCartItemQuantity(id: string, quantity: number): void {
+export function updateCartItemQuantity(id: number, quantity: number): void {
   const cart = getCart();
 
   if (quantity <= 0) {
@@ -95,7 +99,7 @@ export function updateCartItemQuantity(id: string, quantity: number): void {
 }
 
 // Remove item from cart
-export function removeFromCart(id: string): void {
+export function removeFromCart(id: number): void {
   const cart = getCart();
 
   // Filter out the item with the given id

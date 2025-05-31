@@ -1,77 +1,437 @@
 [
   {
-    "id": "1",
-    "name": "Ethiopian Yirgacheffe",
-    "slug": "ethiopian-yirgacheffe",
-    "description": "A bright, fruity coffee with notes of blueberry, citrus, and chocolate. Medium roast.",
-    "price": 16.99,
-    "currency": "USD",
-    "weight": "12oz",
+    "id": 1,
+    "name": "Colombia Supremo Medellin",
+    "slug": "colombia-supremo-medellin",
+    "description": "Colombia Supremo Medellín, dengeli ve kompleks bir tat profili sunar. Bu kahve, tatlılık ve asiditenin mükemmel dengesine sahip olup, aynı zamanda ceviz, şeftali ve kakao gibi zengin aromalarla zenginleştirilmiştir. Yumuşak bir yaban mersini asiditesi, kahvenin finalini temiz ve hafif bir şekilde tamamlar, böylece her yudumda farklı notalarla karşılaşırsınız. Bu kahve, damakta uzun süre kalan zengin, derin bir tat bırakır.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 130
+      },
+      {
+        "weight": "250",
+        "price": 320
+      },
+      {
+        "weight": "1000",
+        "price": 1280
+      }
+    ],
+    "currency": "TRY",
     "inStock": true,
-    "category": "single-origin",
-    "origin": "Ethiopia",
-    "roastLevel": "medium",
-    "flavorNotes": ["blueberry", "citrus", "chocolate"],
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Colombia",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1100-1500m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Walnut",
+      "Sweet",
+      "Peach",
+      "Cocoa",
+      "Soft Cranberry",
+      "Acidity"
+    ],
     "images": [
-      "/images/products/ethiopian-yirgacheffe-1.jpg",
-      "/images/products/ethiopian-yirgacheffe-2.jpg"
+      "https://drive.google.com/file/d/1LDBDhgP9lHcrxq6d6nPQ_p3c7Zu7iFCt/view?usp=drive_link",
+      "https://drive.google.com/file/d/1LDBDhgP9lHcrxq6d6nPQ_p3c7Zu7iFCt/view?usp=drive_link"
     ],
     "featured": true
   },
   {
-    "id": "2",
-    "name": "Colombian Supremo",
-    "slug": "colombian-supremo",
-    "description": "A well-balanced coffee with caramel sweetness and mild acidity. Medium-dark roast.",
-    "price": 15.99,
-    "currency": "USD",
-    "weight": "12oz",
+    "id": 2,
+    "name": "Türk Kahvesi",
+    "slug": "turkish-coffee",
+    "description": "Türk Kahvesi, kahve tüketimi için birçok farklı kahve türünden oluşan bir koleksiyon. Bu koleksiyon, farklı kahve türlerinin farklı tatlarını ve aromalarını sunar, böylece her yudumda farklı bir tat deneyimi yaşanabilir.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 80
+      }
+    ],
+    "currency": "TRY",
     "inStock": true,
-    "category": "single-origin",
-    "origin": "Colombia",
-    "roastLevel": "medium-dark",
-    "flavorNotes": ["caramel", "nuts", "citrus"],
+    "isActive": true,
+    "category": "turkish_coffee",
+    "origin": "Türkiye",
+    "acidity": null,
+    "intensity": null,
+    "processing": "Natural",
+    "growingAltitude": null,
+    "roastLevel": null,
+    "flavorNotes": null,
     "images": [
-      "/images/products/colombian-supremo-1.jpg",
-      "/images/products/colombian-supremo-2.jpg"
+      "https://drive.google.com/file/d/1QR1yNi87-uR_H8fsHqusi8IDpLBc0Phu/view?usp=drive_link",
+      "https://drive.google.com/file/d/1QR1yNi87-uR_H8fsHqusi8IDpLBc0Phu/view?usp=drive_link"
+    ],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Brazil Rio Minas",
+    "slug": "brazil-rio-minas",
+    "description": "Brazil Rio Minas, zengin ve tatlı bir profil sunar. Çikolata ve karamel notaları, bu kahvenin içiminde derinlik ve tatlılık sağlar. Fındıklı bir alt ton, kahvenin lezzetini zenginleştirirken, dengeli ve pürüzsüz bir içim sunar. Yumuşak ve tatlı bir bitişle sonlanan bu kahve, damakta kalıcı bir iz bırakır.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 80
+      },
+      {
+        "weight": "250",
+        "price": 200
+      },
+      {
+        "weight": "1000",
+        "price": 800
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Brazil",
+    "acidity": 2,
+    "intensity": 3,
+    "processing": "Natural",
+    "growingAltitude": "800-1500m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Nutty",
+      "Sweet",
+      "Caramel"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/1zgvrfzUi1nqh6fMJpHw05YyommVq59If/view?usp=drive_link",
+      "https://drive.google.com/file/d/1zgvrfzUi1nqh6fMJpHw05YyommVq59If/view?usp=drive_link"
     ],
     "featured": false
   },
   {
-    "id": "3",
-    "name": "Morning Blend",
-    "slug": "morning-blend",
-    "description": "A smooth, approachable blend perfect for starting your day. Light-medium roast.",
-    "price": 14.99,
-    "currency": "USD",
-    "weight": "12oz",
+    "id": 4,
+    "name": "Brazil Mogiana",
+    "slug": "brazil-mogiana",
+    "description": "Brazil Mogiana, zengin ve tatlı bir profil sunar. Çikolata, fındık ve karamel notaları, kahvenin içiminde derinlik ve tatlılık sağlar. Tatlı badem notaları ise kahvenin daha yumuşak ve hafif bir final yapmasını sağlar. Bu kahve, dengeli ve tatmin edici bir içim deneyimi sunar, damakta uzun süre kalan, tatlı ve zengin bir iz bırakır.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 120
+      },
+      {
+        "weight": "250",
+        "price": 290
+      },
+      {
+        "weight": "1000",
+        "price": 1160
+      }
+    ],
+    "currency": "TRY",
     "inStock": true,
-    "category": "blend",
-    "origin": "Various",
-    "roastLevel": "light-medium",
-    "flavorNotes": ["honey", "almond", "apple"],
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Brazil",
+    "acidity": 2,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1150m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Hazelnut",
+      "Caramel",
+      "Sweet Almond"
+    ],
     "images": [
-      "/images/products/morning-blend-1.jpg",
-      "/images/products/morning-blend-2.jpg"
+      "https://drive.google.com/file/d/15UVPFfNe_IZQ9CPOVR28NnhcRntAxVtU/view?usp=drive_link",
+      "https://drive.google.com/file/d/15UVPFfNe_IZQ9CPOVR28NnhcRntAxVtU/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Nicaragua SHG EP San Jose Estate",
+    "slug": "nicaragua-shg-ep-san-jose-estate",
+    "description": "Nicaragua SHG EP San Jose Estate, hem deneyimli kahveseverler hem de yeni keşif arayanlar için rafine bir içim sunar. Tatlı karamelin sıcaklığı, turunçgil asiditesinin canlılığı ve fındık-çikolata uyumuyla birleşerek çok katmanlı bir deneyime dönüşür. Dengeli asidite ve yumuşak gövde, kahveyi hem filtre hem espresso için ideal hale getirir. Her yudumda başka bir detayla karşılaşacağınız bu kahve, damağınızda kalıcı bir iz bırakacak.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 130
+      },
+      {
+        "weight": "250",
+        "price": 330
+      },
+      {
+        "weight": "1000",
+        "price": 1320
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Nicaragua",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1200-1450m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Sweet",
+      "Citrus",
+      "Honeyed"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/15wV0Kvr7tcl9JqOljrPvxF00GnlhFCy7/view?usp=drive_link",
+      "https://drive.google.com/file/d/15wV0Kvr7tcl9JqOljrPvxF00GnlhFCy7/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "El Salvador Shasta",
+    "slug": "el-salvador-shasta",
+    "description": "El Salvador Shasta, tatlılığı ön planda olan, zengin ve karakterli bir lezzet profiline sahiptir. İlk yudumda gelen iyi düzeyde tatlılık, ardından belirgin bir çikolata notası ile birleşerek fincana dolgunluk katar. Arka planda hissedilen hoş isli (smokey) notalar, bu kahveye rustik ve hafifçe kavrulmuş bir karakter kazandırır. Gövdeli ve dengeli yapısıyla, hem sade hem de sütlü içimlerde güçlü bir performans sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 130
+      },
+      {
+        "weight": "250",
+        "price": 320
+      },
+      {
+        "weight": "1000",
+        "price": 1280
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "El Salvador",
+    "acidity": 2,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1350m+",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Good Sweetness",
+      "Chocolate",
+      "Nice Smokey Notes"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/10lVSOEiFpmIY8RZoBQX9EpciB5STHhKt/view?usp=drive_link",
+      "https://drive.google.com/file/d/10lVSOEiFpmIY8RZoBQX9EpciB5STHhKt/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Guatemala SHB EP Huehuetenango",
+    "slug": "guatemala-shb-ep-huehuetenango",
+    "description": "Guatemala SHB EP Huehuetenango kahvesi, zarif ve dengeli bir içim sunar. Başlangıçta öne çıkan çikolata notaları, kahveye sıcak ve tok bir gövde kazandırırken, yüksek tatlılık genel içimi keyifli hale getirir. Arka planda hissedilen hafif odunsu (light woody) notalar, bu kahveye doğallık ve yumuşak bir derinlik katar. Yumuşak asidite ve pürüzsüz bir bitişle, hem filtre hem de espresso bazlı içimlerde ideal bir tercih sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 130
+      },
+      {
+        "weight": "250",
+        "price": 330
+      },
+      {
+        "weight": "1000",
+        "price": 1320
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Guatemala",
+    "acidity": 2,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1350m+",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Sweet",
+      "Light Woody Notes"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/1tAO1HaAduqoBv33-Yg2plW2tcvBuHTFW/view?usp=drive_link",
+      "https://drive.google.com/file/d/1tAO1HaAduqoBv33-Yg2plW2tcvBuHTFW/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Ethiopia Yirgacheffe GR2",
+    "slug": "ethiopia-yirgacheffe-gr2",
+    "description": "Ethiopia Yirgacheffe GR2, canlı ve aromatik bir fincan profili sunar. İlk yudumda öne çıkan limon aroması, ferahlatıcı ve parlak bir asidite sağlar. Bu turunçgil notalarına eşlik eden bergamot dokunuşları, çay benzeri zarif bir yapıyla fincana zarafet katar. Arka planda hissedilen çikolata notası ise tatlı ve hafif gövdeli içimi dengeler. Bu kahve; hafif, kompleks ve çiçeksi tatlar sevenler için ideal bir tercihtir.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 175
+      },
+      {
+        "weight": "250",
+        "price": 430
+      },
+      {
+        "weight": "1000",
+        "price": 1720
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Ethiopia",
+    "acidity": 3,
+    "intensity": 4,
+    "processing": "Washed",
+    "growingAltitude": "1700-2200m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Lemon",
+      "Bergamot",
+      "Chocolate"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/1ayJtfXvSMtlgETyDSGj8I7H7anxS2ntN/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ayJtfXvSMtlgETyDSGj8I7H7anxS2ntN/view?usp=drive_link"
     ],
     "featured": true
   },
   {
-    "id": "4",
-    "name": "Espresso Blend",
-    "slug": "espresso-blend",
-    "description": "A rich, full-bodied blend designed specifically for espresso. Dark roast.",
-    "price": 17.99,
-    "currency": "USD",
-    "weight": "12oz",
+    "id": 9,
+    "name": "Honduras San Marcos HG EP",
+    "slug": "honduras-san-marcos-hg-ep",
+    "description": "Honduras San Marcos HG EP, tatlı ve dengeli bir fincan deneyimi sunar. Çikolata notaları kahveye zengin ve tok bir gövde kazandırırken, öne çıkan meyvemsi tatlar, içime canlılık ve hafiflik katar. Karamel aroması, kahveye tatlı bir derinlik kazandırırken, kremsi dokusu ise yumuşak ve uzun süre akılda kalan bir bitiş sağlar. Bu çok yönlü lezzet profili, filtre, espresso ve sütlü içimlerde mükemmel uyum gösterir.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 130
+      },
+      {
+        "weight": "250",
+        "price": 320
+      },
+      {
+        "weight": "1000",
+        "price": 1280
+      }
+    ],
+    "currency": "TRY",
     "inStock": true,
-    "category": "blend",
-    "origin": "Various",
-    "roastLevel": "dark",
-    "flavorNotes": ["chocolate", "caramel", "cherry"],
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Honduras",
+    "acidity": 2,
+    "intensity": 2,
+    "processing": "Washed",
+    "growingAltitude": "1350m+",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Fruit",
+      "Creamy",
+      "Caramel"
+    ],
     "images": [
-      "/images/products/espresso-blend-1.jpg",
-      "/images/products/espresso-blend-2.jpg"
+      "https://drive.google.com/file/d/1pHv9ZhSX486p-T2-2BXCLgtgFAqMdphG/view?usp=drive_link",
+      "https://drive.google.com/file/d/1pHv9ZhSX486p-T2-2BXCLgtgFAqMdphG/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Kenya AA Nyeri",
+    "slug": "kenya-aa-nyeri",
+    "description": "Kenya AA Nyeri kahvesi, parlak ve meyvemsi bir fincan profili sunar. Canlı limon ve lime aromaları, güçlü bir asiditeyle birleşerek taze ve enerjik bir içim sağlar. Bu sitrus notalarına eşlik eden mango aroması ise tropikal bir tatlılık ve yumuşaklık kazandırır. Gövdeli ve kompleks yapısıyla bu kahve, özellikle meyvemsi, asiditesi yüksek profilleri seven kahveseverler için mükemmel bir seçenektir.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 150
+      },
+      {
+        "weight": "250",
+        "price": 375
+      },
+      {
+        "weight": "1000",
+        "price": 1500
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Kenya",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Washed",
+    "growingAltitude": "1500-1600m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Lemon",
+      "Lime",
+      "Mango"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/14Yk55y_u2VPStcOc28pbEaX2rkUsOg1D/view?usp=drive_link",
+      "https://drive.google.com/file/d/14Yk55y_u2VPStcOc28pbEaX2rkUsOg1D/view?usp=drive_link"
+    ],
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Uganda Bugisu AA",
+    "slug": "uganda-bugisu-aa",
+    "description": "Uganda Bugisu AA, derin ve sofistike bir lezzet profili sunar. İlk yudumda hissedilen şarap benzeri (winey) karakter, kahveye kompleks ve fermente bir zenginlik katar. Çikolata notaları güçlü bir gövde ve tatlılık sağlarken, belirgin üzüm (grape) ve kiraz (cherry) aromaları, kahveye meyvemsi ve canlı bir tat kazandırır. Orta-yüksek gövdeye sahip bu kahve, hem sade hem de espresso tabanlı içimlerde etkileyici bir deneyim sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 140
+      },
+      {
+        "weight": "250",
+        "price": 345
+      },
+      {
+        "weight": "1000",
+        "price": 1380
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Uganda",
+    "acidity": 2,
+    "intensity": 4,
+    "processing": "Washed",
+    "growingAltitude": "1500-2500m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Wine",
+      "Chocolate",
+      "Grape",
+      "Cherry"
+    ],
+    "images": [
+      "https://drive.google.com/file/d/1bRuTv_obgqhWWC0LUMvTXsSUu97qSvRJ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bRuTv_obgqhWWC0LUMvTXsSUu97qSvRJ/view?usp=drive_link"
     ],
     "featured": false
   }
