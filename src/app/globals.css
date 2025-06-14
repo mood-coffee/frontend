@@ -3,14 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #F4EDE1; /* Latte Cream */
-  --foreground: #333333; /* Koyu Kömür */
-  --primary: #4B2E2A;    /* Espresso */
-  --secondary: #F4EDE1;  /* Latte Cream */
-  --accent: #D9915F;     /* Terracotta */
-  --natural: #A3B18A;    /* Yeşil Misket */
-  --neutral: #333333;    /* Koyu Kömür */
-  --overlay: rgba(0,0,0,0.5); /* Siyah, %50 Opak */
+  --background: #F0E7DA;
+  /* Latte Art Foam */
+  --foreground: #333333;
+  /* Koyu Kömür */
+  --primary: #4F3228;
+  /* Brown */
+  --secondary: #F0E7DA;
+  /* Latte Art Foam */
+  --accent: #A47765;
+  /* Terracotta */
+  --natural: #A3B18A;
+  /* Yeşil Misket */
+  --neutral: #333333;
+  /* Koyu Kömür */
+  --overlay: rgba(0, 0, 0, 0.5);
+  /* Siyah, %50 Opak */
 }
 
 /* Tema değişkenleri */
@@ -43,7 +51,7 @@ body {
   z-index: 1;
 }
 
-.hero-overlay > * {
+.hero-overlay>* {
   position: relative;
   z-index: 2;
 }
@@ -59,4 +67,17 @@ body {
 /* Metin gölgesi */
 .text-with-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }

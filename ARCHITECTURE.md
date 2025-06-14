@@ -1,5 +1,14 @@
 # Project Architecture
 
+### 2024-05-24 – Updated: Toptan Kahve Başvuru Sayfası ve Formu Eklendi
+
+Yeni toptan kahve başvuru sayfası ve formu implementasyonu:
+- `/toptan-kahve` rotası oluşturuldu
+- `src/components/wholesale/WholesaleForm.tsx` bileşeni eklendi
+- `src/data/cities.ts` Türkiye şehirleri verisi eklendi
+- Header navigasyonuna "Toptan Kahve" linki eklendi
+- Kapsamlı form validasyonu ve kullanıcı deneyimi implementasyonu
+
 ## Overview
 
 Bu proje, Next.js tabanlı bir frontend uygulaması olup, gelecekte NestJS backendi ile entegre edilecek şekilde tasarlanmıştır. Mimari, özellik tabanlı (feature-based) bir yaklaşımı ve temiz kod (clean code) prensiplerini benimser.
@@ -38,6 +47,7 @@ Bu proje, Next.js tabanlı bir frontend uygulaması olup, gelecekte NestJS backe
 │   │   ├── contact/          # Contact page
 │   │   ├── products/         # Products listing page
 │   │   │   └── [slug]/       # Product detail page
+│   │   ├── toptan-kahve/     # Wholesale coffee application page
 │   │   ├── error.tsx         # 500 error page
 │   │   ├── not-found.tsx     # 404 not found page
 │   │   └── layout.tsx        # Root layout with HTML and body tags
@@ -46,9 +56,13 @@ Bu proje, Next.js tabanlı bir frontend uygulaması olup, gelecekte NestJS backe
 │   │   ├── contact/          # Contact form components
 │   │   ├── layout/           # Layout components (header, footer)
 │   │   ├── products/         # Product-related components
+│   │   ├── wholesale/        # Wholesale application components
+│   │   │   └── WholesaleForm.tsx # Wholesale application form
 │   │   ├── ErrorBoundary.tsx # Client-side error boundary component
 │   │   └── ui/               # Atomic UI components (buttons, inputs, etc.)
 │   ├── context/              # React Context providers (global state)
+│   ├── data/                 # Static data files
+│   │   └── cities.ts         # Turkish cities and business type data
 │   ├── features/             # Feature-based components and logic
 │   │   ├── about/            # About page specific components
 │   │   ├── blog/             # Blog feature specific components
@@ -517,3 +531,141 @@ export default async function ProductPage({ params }: PageParams) {
 - Static generation ve server-side rendering performance'ının korunması
 - SEO optimizasyonları ve meta data generation'ının etkilenmemesi
 - Loading transition'ları ile kullanıcı deneyimi iyileştirilmesi
+
+### 2025-01-24 – Updated: Route Yapısı Yeniden Organize Edildi
+
+- Ana route "/" artık karşılama sayfası olarak yapılandırıldı
+- Mevcut ana sayfa "/home" route'una taşındı  
+- ConditionalLayout bileşeni ile pathname bazlı layout yönetimi eklendi
+- Ana sayfa (/) için header/footer olmadan minimal layout sağlandı
+- Diğer tüm sayfalar için normal layout (header + content + footer) korundu
+- Navigation linklerinin güncellenmesi ve tutarlılığın sağlanması
+
+### 2025-01-24 – Updated: Karşılama Sayfası Tasarım İyileştirmeleri
+
+- Dikey layout (üst-alt) ile sayfa bölümlemesi implementasyonu
+- Menü linkinin yeni sekmede açılması (_blank target)
+- Poppins font entegrasyonu (Google Fonts) ve Tailwind CSS font konfigürasyonu
+- Gerçek Mood Coffee logosu kullanımı (mood-logo.png)
+- Koyu gri arka plan (#gray-800) ile modern görünüm
+- ESLint hatalarının düzeltilmesi ve kod kalitesi iyileştirmesi
+
+### 2025-01-27 – Updated: CSS Değişkenleri ve Tailwind CSS Entegrasyonu Düzeltildi
+
+CSS variables ve Tailwind CSS entegrasyonu sorunu çözüldü:
+- Tailwind config dosyasında hard-coded renk değerleri CSS değişkenleri ile değiştirildi
+- `tailwind.config.js`'de colors objesi artık `var(--primary)`, `var(--secondary)` vb. kullanıyor
+- `globals.css`'teki `:root` değişkenlerinin değiştirilmesi artık tüm web sitesini etkiliyor
+- Merkezi tema yönetimi sağlandı: tek yerden tüm renkleri değiştirme imkanı
+- CSS custom properties ile Tailwind utility classes arasında doğru mapping
+- Background, foreground, primary, secondary, accent, natural, neutral renkleri entegre edildi
+- Tema değişikliklerinin runtime'da uygulanabilmesi için altyapı hazırlandı
+
+### 2025-01-27 – Updated: Öne Çıkan Ürünler Carousel'ına Navigasyon Okları Eklendi
+
+Carousel navigation functionality implementasyonu:
+- Sol ve sağ navigasyon okları eklendi (absolute positioning ile)
+- Manuel scroll fonksiyonları (scrollLeft, scrollRight) implementasyonu
+- Infinite scroll mantığının navigate okları ile uyumlu hale getirilmesi
+- Mevcut auto-scroll, hover pause ve infinite scroll özelliklerinin korunması
+- Arrow butonlarına hover effects ve accessibility özellikleri eklendi
+- Smooth scroll behavior ile kullanıcı deneyimi iyileştirilmesi
+- Z-index layering ile arrow butonlarının carousel üzerinde konumlanması
+
+### 2025-01-27 – Updated: Mobile Responsive Design Improvements
+
+Enhanced mobile user experience with the following architectural changes:
+
+1. **Hero Section Button Layout**
+   - Modified button container to use flexbox with responsive direction
+   - Implemented full-width buttons on mobile, auto-width on desktop
+   - Added proper spacing and alignment for better touch targets
+
+2. **Featured Products Carousel**
+   - Migrated from static grid to horizontal scrolling carousel
+   - Implemented infinite scroll with product duplication
+   - Added auto-scroll functionality with 2-second intervals
+   - Included hover pause functionality for better user control
+   - Added custom scrollbar hiding utilities
+
+3. **Mobile Navigation Menu**
+   - Restructured menu items with consistent icon alignment
+   - Added divider lines between menu items for better visual separation
+   - Implemented fixed-width icon containers for proper alignment
+   - Enhanced touch targets and visual hierarchy
+
+4. **CSS Architecture Updates**
+   - Added `.scrollbar-hide` utility class for cross-browser scrollbar hiding
+   - Enhanced global CSS with custom utility classes
+   - Maintained responsive design principles throughout
+
+These changes improve the mobile user experience significantly while maintaining the existing design system and architectural patterns.
+
+## Guidelines
+
+- All architectural decisions must be documented
+- Performance implications should be considered for all changes
+- Accessibility must be maintained across all features
+- Mobile-first approach should be followed for all new components
+- Components should be reusable and well-documented
+- State management should be efficient and predictable
+
+### 2025-01-24 – Updated: Blog Görselleri Google Drive Entegrasyonu Başarıyla Tamamlandı
+
+#### Google Drive URL İşleme Sistemi Optimizasyonu
+- **Thumbnail Format Kullanımı**: Google Drive URL'leri `thumbnail` formatına güncellendi
+- **Next.js Image Optimization**: `unoptimized` prop kaldırılarak Next.js'in kendi optimizasyonu kullanıldı
+- **Performance İyileştirmesi**: Thumbnail format ile daha hızlı yükleme sağlandı
+
+#### Başarılı Çözüm Detayları
+- **URL Format**: `https://drive.google.com/thumbnail?id=FILE_ID&sz=w800`
+- **Image Optimization**: Next.js'in built-in image optimization aktif
+- **Responsive Images**: Otomatik boyut optimizasyonu ve lazy loading
+- **Cross-Origin Support**: CORS ayarları ile Google Drive entegrasyonu
+
+#### Blog Bileşenleri Final Durumu
+- **BlogPreview Component**: Google Drive thumbnail'ları düzgün görüntüleniyor
+- **Blog List Page**: Tüm blog görselleri yükleniyor
+- **Blog Detail Page**: Yüksek kaliteli blog görselleri aktif
+
+#### Teknik Başarı Faktörleri
+- **Doğru URL Format**: Thumbnail format Next.js Image component ile uyumlu
+- **Optimization Enabled**: Next.js'in kendi image processing'i kullanılıyor
+- **Hostname Configuration**: Gerekli domain'ler next.config.ts'e eklendi
+- **Performance**: Hızlı yükleme ve otomatik optimizasyon
+
+### 2025-01-24 – Updated: About Sayfası Görsel Entegrasyonu
+
+#### Placeholder Sisteminden Logo Entegrasyonuna Geçiş
+- **SVG Placeholder Kaldırma**: "Hikayemiz" ve "Değerlerimiz" bölümlerindeki SVG placeholder'lar kaldırıldı
+- **Marka Logosu Entegrasyonu**: Her iki bölümde de `mood-logo.png` görseli kullanıldı
+- **Tutarlı Görsel Dil**: Tüm sayfalarda aynı marka logosu ile tutarlılık sağlandı
+
+#### Next.js Image Component Optimizasyonu
+- **Performance**: Next.js Image component ile otomatik optimizasyon
+- **Responsive Design**: Container boyutuna uyumlu görsel boyutlandırma
+- **Aspect Ratio**: `object-contain` ile logo oranlarının korunması
+- **Loading**: Lazy loading ve progressive enhancement
+
+#### About Sayfası Görsel Düzeni
+- **Hikayemiz Bölümü**: Sağ tarafta logo görseli
+- **Değerlerimiz Bölümü**: Sol tarafta logo görseli (order-1/order-2 ile responsive)
+- **Styling**: `bg-secondary` arka plan ile marka renklerine uyum
+- **Padding**: `p-8` ile logo etrafında uygun boşluk
+
+#### Marka Tutarlılığı
+- **Logo Kullanımı**: Tüm sayfalarda aynı `mood-logo.png` dosyası
+- **Görsel Hiyerarşi**: Logo'nun about sayfasında marka hikayesini desteklemesi
+- **User Experience**: Görsel tutarlılık ile marka tanınırlığının artırılması
+
+### 2025-01-27 – Updated: Ürün Detayında Öğütme Seçenekleri Eklendi
+
+Çekirdek kahveler için öğütme seçenekleri sistemi implementasyonu:
+- `Product` interface'ine `grindType` ve `availableGrindOptions` alanları eklendi
+- `CartItem` interface'ine öğütme seçeneği desteği eklendi
+- `products.json` dosyasında her ürün için `availableGrindOptions` alanı tanımlandı
+- Türk Kahvesi için `availableGrindOptions: null`, diğer kahveler için 9 öğütme seçeneği
+- `ProductDetail` bileşeninde dinamik öğütme seçenekleri (ürün verisinden)
+- Hardcoded seçeneklerden veri-tabanlı dinamik seçeneklere geçiş
+- CartContext'te öğütme seçeneği ile benzersiz ürün kimliği oluşturma
+- Aynı ürünün farklı öğütme seçenekleriyle ayrı sepet öğeleri olarak işlenmesi

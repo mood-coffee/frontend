@@ -26,4 +26,6 @@ export interface Product {
   flavorNotes: string[] | null;
   images: string[];
   featured: boolean;
+  grindType?: string; // Optional grinding type for cart items
+  availableGrindOptions: string[] | null; // Available grinding options for this product
 }

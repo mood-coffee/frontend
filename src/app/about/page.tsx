@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 
 export const metadata = {
@@ -41,24 +42,26 @@ export default function AboutPage() {
               da kaliteyi ve özeni sürdüreceğiz.
             </p>
           </div>
-          <div className="bg-secondary h-96 rounded-lg flex items-center justify-center text-neutral overflow-hidden shadow-md">
-            <div className="text-center p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <p className="text-primary font-medium">Hikayemiz Görsel Yer Tutucu</p>
-            </div>
+          <div className="bg-secondary h-96 rounded-lg flex items-center justify-center overflow-hidden shadow-md">
+            <Image
+              src="/logo-black.png"
+              alt="Mood Coffee Hikayemiz"
+              width={400}
+              height={300}
+              className="object-contain max-w-full max-h-full p-8"
+            />
           </div>
         </div>
 
         <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1 bg-secondary h-96 rounded-lg flex items-center justify-center text-neutral overflow-hidden shadow-md">
-            <div className="text-center p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <p className="text-primary font-medium">Değerlerimiz Görsel Yer Tutucu</p>
-            </div>
+          <div className="order-2 lg:order-1 bg-secondary h-96 rounded-lg flex items-center justify-center overflow-hidden shadow-md">
+            <Image
+              src="/logo-black.png"
+              alt="Mood Coffee Değerlerimiz"
+              width={400}
+              height={300}
+              className="object-contain max-w-full max-h-full p-8"
+            />
           </div>
           <div className="order-1 lg:order-2 bg-white p-6 rounded-lg shadow-sm border border-natural">
             <h2 className="text-3xl font-bold tracking-tight text-primary">Değerlerimiz</h2>
@@ -103,18 +106,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="mt-24">
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-natural text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-primary mb-6">Vizyonumuz</h2>
-            <p className="text-lg text-neutral max-w-4xl mx-auto">
-              Geleceğe dair en büyük hayalimiz; Mood Coffee&apos;yi yalnızca kahve içilen bir yer değil, 
-              insanların kendilerini ait hissettikleri, dostlukların kurulduğu, ilhamın paylaşıldığı 
-              bir yaşam alanına dönüştürmek. Kendi kahvemizi kavurduğumuz bu yeni dönemde, bu hayali 
-              gerçeğe dönüştürmek için tutkuyla çalışmaya devam ediyoruz.
-            </p>
           </div>
         </div>
       </Container>

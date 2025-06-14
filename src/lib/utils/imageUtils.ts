@@ -9,7 +9,8 @@ export function convertGoogleDriveUrl(url: string): string {
   
   if (driveMatch) {
     const fileId = driveMatch[1];
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    // Try the direct thumbnail format first, fallback to uc format
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
   }
   
   // Return original URL if not a Google Drive link

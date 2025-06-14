@@ -9,11 +9,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#4B2E2A', // Espresso
-        secondary: '#F4EDE1', // Latte Cream
-        accent: '#D9915F', // Terracotta
-        natural: '#A3B18A', // Yeşil Misket
-        neutral: '#333333', // Koyu Kömür
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        accent: 'var(--accent)',
+        natural: 'var(--natural)',
+        neutral: 'var(--neutral)',
+      },
+      fontFamily: {
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
       },
     },
   },

@@ -7,6 +7,7 @@ export interface Post {
   slug: string;
   excerpt: string;
   content: string;
+  image: string;
   author: string;
   authorId: string;
   publishedAt: string;

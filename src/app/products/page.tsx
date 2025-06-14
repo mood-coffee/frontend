@@ -26,10 +26,10 @@ export default async function ProductsPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Our Products
+              Ürünler
             </h1>
             <p className="mt-6 text-lg leading-8 text-neutral">
-              Carefully sourced and expertly roasted coffee beans from the world&apos;s finest growing regions.
+              Dünyanın en iyi bölgelerinden seçilen ve işlenen kahve çekirdekleri.
             </p>
           </div>
         </Container>

@@ -12,7 +12,7 @@ export function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-accent">Mood Coffee</h3>
+            <h3 className="text-lg font-semibold mb-4 text-accent">Mood Roastery</h3>
             <p className="text-sm text-secondary mb-4">
               Save the Mood !
             </p>
@@ -69,11 +69,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=turkish_coffee" className="text-sm text-secondary hover:text-accent transition-colors">
-                  Türk Kahvesi
-                </Link>
-              </li>
-              <li>
                 <Link href="/products?category=equipment" className="text-sm text-secondary hover:text-accent transition-colors">
                   Ekipman
                 </Link>
@@ -118,7 +113,7 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-natural">
           <p className="text-sm text-secondary text-center">
-            &copy; {new Date().getFullYear()} Mood Coffee. Tüm hakları saklıdır.
+            &copy; {new Date().getFullYear()} Mood Roastery. Tüm hakları saklıdır.
           </p>
         </div>
       </Container>

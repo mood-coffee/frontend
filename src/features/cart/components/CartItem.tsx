@@ -10,6 +10,19 @@ interface CartItemProps {
   item: CartItemType;
 }
 
+// Grinding options mapping for display
+const GRIND_LABELS: { [key: string]: string } = {
+  'whole-bean': 'Çekirdek',
+  'espresso': 'Espresso',
+  'filter': 'Filtre Kahve',
+  'moka-pot': 'Moka Pot',
+  'chemex': 'Chemex',
+  'v60': 'V60',
+  'french-press': 'French Press',
+  'cold-brew': 'Cold Brew',
+  'aeropress': 'AeroPress'
+};
+
 export function CartItem({ item }: CartItemProps) {
   const { updateQuantity, removeItem } = useCart();
   const [isUpdating, setIsUpdating] = useState(false);
@@ -90,7 +103,7 @@ export function CartItem({ item }: CartItemProps) {
           alt={item.name}
           width={96}
           height={96}
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-contain object-center"
         />
       </div>
 
@@ -103,8 +116,18 @@ export function CartItem({ item }: CartItemProps) {
           </div>
           <div className="mt-1 text-sm text-gray-500">
             <span>{item.weight}</span>
-            <span className="mx-2">|</span>
-            <span>{item.roastLevel}</span>
+            {item.roastLevel && (
+              <>
+                <span className="mx-2">|</span>
+                <span>{item.roastLevel}</span>
+              </>
+            )}
+            {item.grindType && (
+              <>
+                <span className="mx-2">|</span>
+                <span>{GRIND_LABELS[item.grindType] || item.grindType}</span>
+              </>
+            )}
             <span className="mx-2">|</span>
             <span>Birim: ₺{item.price.toFixed(2)}</span>
           </div>

@@ -54,33 +54,22 @@ export function ProductList({ initialProducts }: ProductListProps) {
         <div className="inline-flex rounded-md shadow-sm" role="group">
           <button
             onClick={() => handleCategoryChange('all')}
-            className={`px-4 py-2 text-sm font-medium ${
-              category === 'all' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
-            } border border-natural rounded-l-md`}
+            className={`px-4 py-2 text-sm font-medium ${category === 'all' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
+              } border border-natural rounded-l-md`}
           >
             Tüm Ürünler
           </button>
           <button
             onClick={() => handleCategoryChange('single_origin')}
-            className={`px-4 py-2 text-sm font-medium ${
-              category === 'single_origin' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
-            } border-t border-b border-r border-natural`}
+            className={`px-4 py-2 text-sm font-medium ${category === 'single_origin' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
+              } border-t border-b border-r border-natural`}
           >
             Çekirdek Kahve
           </button>
           <button
-            onClick={() => handleCategoryChange('turkish_coffee')}
-            className={`px-4 py-2 text-sm font-medium ${
-              category === 'turkish_coffee' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
-            } border-t border-b border-r border-natural`}
-          >
-            Türk Kahvesi
-          </button>
-          <button
             onClick={() => handleCategoryChange('equipment')}
-            className={`px-4 py-2 text-sm font-medium ${
-              category === 'equipment' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
-            } border-t border-b border-r border-natural rounded-r-md`}
+            className={`px-4 py-2 text-sm font-medium ${category === 'equipment' ? 'bg-accent text-white' : 'bg-white text-neutral hover:bg-secondary'
+              } border-t border-b border-r border-natural rounded-r-md`}
           >
             Ekipman
           </button>

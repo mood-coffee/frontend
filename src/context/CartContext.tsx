@@ -15,12 +15,13 @@ export interface CartItem {
   weight: string;
   roastLevel: string | null;
   image?: string;
+  grindType?: string; // Grinding option for coffee beans
 }
 
 // Shape of our context value
 interface CartContextValue {
   items: CartItem[];
-  addItem: (product: Product & { price?: number; weight?: string }, quantity: number) => void;
+  addItem: (product: Product & { price?: number; weight?: string }, quantity: number, grindType?: string) => void;
   removeItem: (cartItemId: string) => void;
   updateQuantity: (cartItemId: string, quantity: number) => void;
   clearCart: () => void;
@@ -73,16 +74,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, isInitialized]);
 
   // Add an item to the cart
-  const addItem = (product: Product & { price?: number; weight?: string }, quantity: number) => {
-    console.log(`[CartContext] Adding product ${product.id} to cart`, { product, quantity });
+  const addItem = (product: Product & { price?: number; weight?: string }, quantity: number, grindType?: string) => {
+    console.log(`[CartContext] Adding product ${product.id} to cart`, { product, quantity, grindType });
     
     // Handle both legacy (price/weight props) and new (priceWeight array) formats
     const price = product.price || product.priceWeight[0].price;
     const weight = product.weight || (product.priceWeight[0].weight + 'g');
-    const cartItemId = `${product.id}-${weight}`;
+    // Include grindType in cartItemId for unique identification
+    const cartItemId = grindType ? `${product.id}-${weight}-${grindType}` : `${product.id}-${weight}`;
     
     setItems(prevItems => {
-      // Check if item already exists in cart (same product ID and weight)
+      // Check if item already exists in cart (same product ID, weight, and grind type)
       const existingItemIndex = prevItems.findIndex(item => item.cartItemId === cartItemId);
       
       if (existingItemIndex >= 0) {
@@ -104,7 +106,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
           slug: product.slug,
           weight: weight,
           roastLevel: product.roastLevel,
-          image: product.images?.[0]
+          image: product.images?.[0],
+          grindType: grindType
         }];
       }
     });

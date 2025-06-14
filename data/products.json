@@ -1,5 +1,44 @@
 [
   {
+    "id": 2,
+    "name": "Türk Kahvesi",
+    "slug": "turkish-coffee",
+    "description": "Türk Kahvesi, kahve tüketimi için birçok farklı kahve türünden oluşan bir koleksiyon. Bu koleksiyon, farklı kahve türlerinin farklı tatlarını ve aromalarını sunar, böylece her yudumda farklı bir tat deneyimi yaşanabilir.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 80
+      },
+      {
+        "weight": "250",
+        "price": 200
+      },
+      {
+        "weight": "1000",
+        "price": 800
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Türkiye",
+    "acidity": null,
+    "intensity": null,
+    "processing": "Natural",
+    "growingAltitude": null,
+    "roastLevel": null,
+    "flavorNotes": null,
+    "images": [
+      "https://drive.google.com/file/d/1BPNQEJdxhNofMFpx2T3pakejTELel8o0/view?usp=drive_link",
+      "https://drive.google.com/file/d/1gYccCiuRjLi7yXivS3oqTUtjPPi5HkN6/view?usp=drive_link",
+      "https://drive.google.com/file/d/1S5p8IsaVt1T3mB7AdBhP6EqYR4qXQGeg/view?usp=drive_link",
+      "https://drive.google.com/file/d/15z0-u06k4_O8z_q_LmnJ24OhBHDVmSDH/view?usp=drive_link"
+    ],
+    "featured": true,
+    "availableGrindOptions": null
+  },
+  {
     "id": 1,
     "name": "Colombia Supremo Medellin",
     "slug": "colombia-supremo-medellin",
@@ -37,38 +76,23 @@
       "Acidity"
     ],
     "images": [
-      "https://drive.google.com/file/d/1LDBDhgP9lHcrxq6d6nPQ_p3c7Zu7iFCt/view?usp=drive_link",
-      "https://drive.google.com/file/d/1LDBDhgP9lHcrxq6d6nPQ_p3c7Zu7iFCt/view?usp=drive_link"
+      "https://drive.google.com/file/d/1XkziuzfSPkH9UemeGuPzgl8LF1MaFMks/view?usp=drive_link",
+      "https://drive.google.com/file/d/1IwqJQeDZfrPCb38sbXU78k2jtKRKSmfg/view?usp=drive_link",
+      "https://drive.google.com/file/d/1z4avIoblzhUBZwC1F5_mJ_bevzOefz6K/view?usp=drive_link",
+      "https://drive.google.com/file/d/1AxD8PCrNOPG4M2gZYRVasnKXrI59yTHT/view?usp=drive_link"
     ],
-    "featured": true
-  },
-  {
-    "id": 2,
-    "name": "Türk Kahvesi",
-    "slug": "turkish-coffee",
-    "description": "Türk Kahvesi, kahve tüketimi için birçok farklı kahve türünden oluşan bir koleksiyon. Bu koleksiyon, farklı kahve türlerinin farklı tatlarını ve aromalarını sunar, böylece her yudumda farklı bir tat deneyimi yaşanabilir.",
-    "priceWeight": [
-      {
-        "weight": "100",
-        "price": 80
-      }
-    ],
-    "currency": "TRY",
-    "inStock": true,
-    "isActive": true,
-    "category": "turkish_coffee",
-    "origin": "Türkiye",
-    "acidity": null,
-    "intensity": null,
-    "processing": "Natural",
-    "growingAltitude": null,
-    "roastLevel": null,
-    "flavorNotes": null,
-    "images": [
-      "https://drive.google.com/file/d/1QR1yNi87-uR_H8fsHqusi8IDpLBc0Phu/view?usp=drive_link",
-      "https://drive.google.com/file/d/1QR1yNi87-uR_H8fsHqusi8IDpLBc0Phu/view?usp=drive_link"
-    ],
-    "featured": true
+    "featured": true,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 3,
@@ -106,10 +130,23 @@
       "Caramel"
     ],
     "images": [
-      "https://drive.google.com/file/d/1zgvrfzUi1nqh6fMJpHw05YyommVq59If/view?usp=drive_link",
-      "https://drive.google.com/file/d/1zgvrfzUi1nqh6fMJpHw05YyommVq59If/view?usp=drive_link"
+      "https://drive.google.com/file/d/1LXG_8j7enNKb-8RIfTfZKVd5HGoIMUam/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Mbisy8Wk56xDGU9_rG74j4ljdV_597Aw/view?usp=drive_link",
+      "https://drive.google.com/file/d/1FcKTR3w0oKEarXulGJ0sprfT02vlcCPZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Bmt20u-ZqdWSvCQ2VdHP43JcDxriS1rg/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 4,
@@ -147,10 +184,23 @@
       "Sweet Almond"
     ],
     "images": [
-      "https://drive.google.com/file/d/15UVPFfNe_IZQ9CPOVR28NnhcRntAxVtU/view?usp=drive_link",
-      "https://drive.google.com/file/d/15UVPFfNe_IZQ9CPOVR28NnhcRntAxVtU/view?usp=drive_link"
+      "https://drive.google.com/file/d/1R33DzgKxQh2zld4e9iTshw5JqmbtlDbR/view?usp=drive_link",
+      "https://drive.google.com/file/d/1QKBaUuJCHv4GE9pSjD_X3wV8U7b7XkU5/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ntwwuev6KpVdIOpYuypqeUEZtSKyQ_P5/view?usp=drive_link",
+      "https://drive.google.com/file/d/16fn00YDhZ393-kmvXLSwLHjNSiIu64LQ/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 5,
@@ -188,10 +238,23 @@
       "Honeyed"
     ],
     "images": [
-      "https://drive.google.com/file/d/15wV0Kvr7tcl9JqOljrPvxF00GnlhFCy7/view?usp=drive_link",
-      "https://drive.google.com/file/d/15wV0Kvr7tcl9JqOljrPvxF00GnlhFCy7/view?usp=drive_link"
+      "https://drive.google.com/file/d/1EwiohfMaZ00-ftPgQgGzz-g_xVhTveeh/view?usp=drive_link",
+      "https://drive.google.com/file/d/1dyKSmbGX1MgPEdXhga3wFzK6_tftuYMx/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ozHyoi_s_wspMZAlyYzLJnFj2pgfrxMc/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bN60MUbSuUJDISJ_xXBI64OBs3goMX6x/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 6,
@@ -228,10 +291,23 @@
       "Nice Smokey Notes"
     ],
     "images": [
-      "https://drive.google.com/file/d/10lVSOEiFpmIY8RZoBQX9EpciB5STHhKt/view?usp=drive_link",
-      "https://drive.google.com/file/d/10lVSOEiFpmIY8RZoBQX9EpciB5STHhKt/view?usp=drive_link"
+      "https://drive.google.com/file/d/1zJ-yz0BC9JtMp6BBkLtVfQerfwaz-3Gb/view?usp=drive_link",
+      "https://drive.google.com/file/d/14rn5b8wWp-THZgGD5raYBDYDzU41ghjg/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wyj_VM6-rKssmGSqRJ7DqAupBsT7zbZx/view?usp=drive_link",
+      "https://drive.google.com/file/d/1DDakOZUFyMcu1_HmIg1fLZLXrcPRqSVG/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 7,
@@ -268,10 +344,23 @@
       "Light Woody Notes"
     ],
     "images": [
-      "https://drive.google.com/file/d/1tAO1HaAduqoBv33-Yg2plW2tcvBuHTFW/view?usp=drive_link",
-      "https://drive.google.com/file/d/1tAO1HaAduqoBv33-Yg2plW2tcvBuHTFW/view?usp=drive_link"
+      "https://drive.google.com/file/d/1b7-tNqPZKrYaRyMuto8dL5HJUVXPSJO5/view?usp=drive_link",
+      "https://drive.google.com/file/d/1DKxN7xC6viotO_qJvi1QxTpnSKpYvJ94/view?usp=drive_link",
+      "https://drive.google.com/file/d/18lt0dBAVdwwfJE3UtV2vUzrAS-O3OkAg/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ouGUQpW5Ib8AZN2a3C95c0EECaBPv-Xs/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 8,
@@ -308,10 +397,23 @@
       "Chocolate"
     ],
     "images": [
-      "https://drive.google.com/file/d/1ayJtfXvSMtlgETyDSGj8I7H7anxS2ntN/view?usp=drive_link",
-      "https://drive.google.com/file/d/1ayJtfXvSMtlgETyDSGj8I7H7anxS2ntN/view?usp=drive_link"
+      "https://drive.google.com/file/d/1-jz1PDKlFZqTtHG0-EyYJj9G3gKwxu7U/view?usp=drive_link",
+      "https://drive.google.com/file/d/1EvMPO3PmtCM9EWCBDNxcrXvLrFFkHbj3/view?usp=drive_link",
+      "https://drive.google.com/file/d/1a7EsH10wsaHrKcDaasp5Wy1fyMNy0RFL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1pTIHAfkl45Wi2oKkVhArQciGzRI2cx2c/view?usp=drive_link"
     ],
-    "featured": true
+    "featured": true,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 9,
@@ -349,10 +451,23 @@
       "Caramel"
     ],
     "images": [
-      "https://drive.google.com/file/d/1pHv9ZhSX486p-T2-2BXCLgtgFAqMdphG/view?usp=drive_link",
-      "https://drive.google.com/file/d/1pHv9ZhSX486p-T2-2BXCLgtgFAqMdphG/view?usp=drive_link"
+      "https://drive.google.com/file/d/1bW-XhlUSHxHQgYg87MQz7PqKHDv2vJNS/view?usp=drive_link",
+      "https://drive.google.com/file/d/18q9ConnT_MsQSvmSsmEnwGQ6HPGGAbYK/view?usp=drive_link",
+      "https://drive.google.com/file/d/1kYPRzQJcD3dfWv9pyo9gcjU_CCLllozT/view?usp=drive_link",
+      "https://drive.google.com/file/d/16K7YkcuhxNDa3umKC8iWeCooDfOeXaPV/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 10,
@@ -389,10 +504,23 @@
       "Mango"
     ],
     "images": [
-      "https://drive.google.com/file/d/14Yk55y_u2VPStcOc28pbEaX2rkUsOg1D/view?usp=drive_link",
-      "https://drive.google.com/file/d/14Yk55y_u2VPStcOc28pbEaX2rkUsOg1D/view?usp=drive_link"
+      "https://drive.google.com/file/d/1bhvNQGN3MSzi3p8sb0IgKBI_GDDRGl1P/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ffJo18pNV-84dxycEjIHCrDTQEfjLMt8/view?usp=drive_link",
+      "https://drive.google.com/file/d/1FwEM-Ux39IvUcKkGtIWsvznFGUy_jJIn/view?usp=drive_link",
+      "https://drive.google.com/file/d/1DIcTCMAZApYRjzIMk7SEqmsAg80gjvZG/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   },
   {
     "id": 11,
@@ -430,9 +558,22 @@
       "Cherry"
     ],
     "images": [
-      "https://drive.google.com/file/d/1bRuTv_obgqhWWC0LUMvTXsSUu97qSvRJ/view?usp=drive_link",
-      "https://drive.google.com/file/d/1bRuTv_obgqhWWC0LUMvTXsSUu97qSvRJ/view?usp=drive_link"
+      "https://drive.google.com/file/d/1nJ4AES4ucQFyY_O6M5o-moT-rBO-tK7z/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ijuyWY_CMwa3nOKM_sQg6Sz7xpbQjcwC/view?usp=drive_link",
+      "https://drive.google.com/file/d/1sEdX21tZy9_c284N34q2WMa5AsgW3NNn/view?usp=drive_link",
+      "https://drive.google.com/file/d/1UufI-40v610x6PIYZIS5KjmGvNO9xWVy/view?usp=drive_link"
     ],
-    "featured": false
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
   }
 ]

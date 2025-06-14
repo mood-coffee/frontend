@@ -11,15 +11,32 @@ interface ProductDetailProps {
   product: Product;
 }
 
+// Grinding options labels mapping
+const GRIND_LABELS: { [key: string]: string } = {
+  'whole-bean': 'Çekirdek',
+  'espresso': 'Espresso',
+  'filter': 'Filtre Kahve',
+  'moka-pot': 'Moka Pot',
+  'chemex': 'Chemex',
+  'v60': 'V60',
+  'french-press': 'French Press',
+  'cold-brew': 'Cold Brew',
+  'aeropress': 'AeroPress'
+};
+
 export function ProductDetail({ product }: ProductDetailProps) {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedWeightIndex, setSelectedWeightIndex] = useState(0);
+  const [selectedGrindType, setSelectedGrindType] = useState('whole-bean');
   const [addedToCart, setAddedToCart] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const selectedPriceWeight = product.priceWeight[selectedWeightIndex];
+  
+  // Check if grinding options are available for this product
+  const hasGrindingOptions = product.availableGrindOptions && product.availableGrindOptions.length > 0;
 
   const handleAddToCart = useCallback(() => {
     if (isUpdating || !product) return;
@@ -32,7 +49,10 @@ export function ProductDetail({ product }: ProductDetailProps) {
         price: selectedPriceWeight.price,
         weight: selectedPriceWeight.weight + 'g'
       };
-      addItem(cartProduct, quantity);
+      
+      // Only pass grindType if grinding options are available
+      const grindType = hasGrindingOptions ? selectedGrindType : undefined;
+      addItem(cartProduct, quantity, grindType);
       setAddedToCart(true);
       
       // Reset quantity to 1 after adding to cart
@@ -47,7 +67,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
     } finally {
       setIsUpdating(false);
     }
-  }, [product, quantity, selectedPriceWeight, addItem, isUpdating]);
+  }, [product, quantity, selectedPriceWeight, selectedGrindType, addItem, isUpdating, hasGrindingOptions]);
 
   const incrementQuantity = useCallback(() => {
     setQuantity(prev => prev + 1);
@@ -68,13 +88,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
         {/* Main product image */}
-        <div className="w-full h-[500px] bg-secondary rounded-lg overflow-hidden">
+        <div className="w-full aspect-square bg-secondary rounded-lg overflow-hidden">
           <Image
             src={mainImage || placeholderImage}
             alt={product.name}
             width={500}
             height={500}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             priority
           />
         </div>
@@ -85,7 +105,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
-                className={`h-24 rounded overflow-hidden border-2 transition-colors ${selectedImageIndex === index ? 'border-accent' : 'border-gray-200'
+                className={`aspect-square rounded overflow-hidden border-2 transition-colors ${selectedImageIndex === index ? 'border-accent' : 'border-gray-200'
                   }`}
               >
                 <Image
@@ -93,7 +113,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   alt={`${product.name} görsel ${index + 1}`}
                   width={96}
                   height={96}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </button>
             ))}
@@ -151,6 +171,27 @@ export function ProductDetail({ product }: ProductDetailProps) {
             ))}
           </div>
         </div>
+
+        {/* Grinding Options - Only if availableGrindOptions is not null */}
+        {hasGrindingOptions && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold text-primary mb-3">Öğütme Seçimi</h3>
+            <div className="grid grid-cols-2 gap-2">
+              {product.availableGrindOptions!.map((grindOption) => (
+                <button
+                  key={grindOption}
+                  onClick={() => setSelectedGrindType(grindOption)}
+                  className={`p-3 border rounded-lg text-center transition-colors ${selectedGrindType === grindOption
+                    ? 'border-accent bg-accent/10 text-accent'
+                    : 'border-natural hover:border-accent/50'
+                    }`}
+                >
+                  <span className="text-sm font-medium">{GRIND_LABELS[grindOption] || grindOption}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Product Details */}
         <div className="mt-6">

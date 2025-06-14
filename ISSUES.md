@@ -4,10 +4,13 @@ Bu belge, projedeki özelliklerin ve görevlerin ilerlemesini takip eder.
 
 ## Aktif Görevler
 
+- [x] #33: Toptan Kahve Başvuru Sayfası ve Formu Ekleme ✓ (Tamamlandı)
+- [x] #38: Ürün Detayında Öğütme Seçenekleri Ekleme ✓ (Tamamlandı)
 - [FEATURE:architecture-refactor] Modüler ve Feature-Temelli Mimariye Geçiş (Devam Ediyor)
 - [FEATURE:api-adapter] API Adapter Katmanı İyileştirmesi ✓ (Tamamlandı)
 - [FEATURE:cart-state] Sepet Durum Yönetimini Konsolide Etme ✓ (Tamamlandı)
 - [FEATURE:nextjs15-slug-fix] Next.js 15 Dynamic Routes Params Fix ✓ (Tamamlandı)
+- [FEATURE:welcome-page] Karşılama Sayfası Ekleme ✓ (Tamamlandı)
 - [x] #13: Navigation icons ekleme ve sepet text güncelleme ✓ (Tamamlandı)
 - [x] #14: Favicon güncelleme ✓ (Tamamlandı)
 - [x] #15: Ürün görselleri ekleme ve görüntüleme ✓ (Tamamlandı)
@@ -559,3 +562,141 @@ Bu belge, projedeki özelliklerin ve görevlerin ilerlemesini takip eder.
   - [x] Loading state'inin ProductList için özel fallback component ile sağlanması
   - [x] Graceful loading transition'ları ve error handling
   - [x] SEO ve performance optimizasyonlarının korunması
+
+## [FEATURE:welcome-page] [2025-01-24] Karşılama Sayfası Ekleme
+
+- [x] Kullanıcı yönlendirmeli karşılama sayfası oluşturma
+  - [x] Menü sayfasına yönlendirme (https://menu-online.co/doodcoffee/5/menu)
+  - [x] Ana siteye yönlendirme (https://www.moodcoffee.tr/)
+  - [x] Örnek siteye uygun minimalist tasarım (https://ayciltasimacilik.com/mood.html)
+- [x] Route yapısı yeniden organize edilmesi
+  - [x] Ana route "/" karşılama sayfası olarak yapılandırılması
+  - [x] Mevcut ana sayfa "/home" route'una taşınması
+  - [x] ConditionalLayout ile header/footer'ın sadece iç sayfalarda gösterilmesi
+- [x] Navigation güncellemeleri
+  - [x] HeaderClient'ta ana sayfa linklerinin "/home"'a güncellenmesi
+  - [x] Logo linklerinin "/home" route'una yönlendirilmesi
+- [x] Tasarım basitleştirmesi ve iyileştirmeleri
+  - [x] Verilen örneğe uygun sadece başlık, slogan ve iki link
+  - [x] Koyu gri arka plan ve minimal tipografi
+  - [x] Dikey layout (üst-alt) ile sayfa bölümlemesi
+  - [x] Menü linkinin yeni sekmede açılması
+  - [x] Poppins font entegrasyonu ve Tailwind CSS konfigürasyonu
+  - [x] Gerçek Mood Coffee logosu kullanımı (mood-logo.png)
+- [x] ESLint hatalarının düzeltilmesi
+  - [x] Kullanılmayan import'ların temizlenmesi
+  - [x] TypeScript type definition sorunlarının giderilmesi
+
+## [FEATURE:wholesale-coffee] [2024-05-24] Toptan Kahve Başvuru Sayfası ve Formu
+
+- [x] Toptan kahve sayfası oluşturma
+  - [x] /toptan-kahve rotası oluşturma
+  - [x] Sayfa içeriği ve görsel tasarım
+  - [x] Kullanıcı dostu açıklama metinleri ekleme
+- [x] Başvuru formu implementasyonu
+  - [x] Kişisel bilgiler (Ad, Soyad, E-posta, Telefon)
+  - [x] Firma bilgileri (Firma Adı, Şehir, Adres)
+  - [x] İşletme bilgileri (İşletme Türü, Aylık Ortalama Miktar)
+  - [x] Opsiyonel mesaj alanı
+- [x] Form doğrulama ve kullanıcı deneyimi
+  - [x] Tüm zorunlu alanlar için validasyon
+  - [x] Türkçe hata mesajları
+  - [x] Gerçek zamanlı doğrulama
+  - [x] Başarılı gönderim sonrası kullanıcı geri bildirimi
+- [x] Türkiye şehirlerini içeren dropdown
+  - [x] 81 il içeren şehir listesi
+  - [x] İşletme türü seçenekleri (Kafe, Restoran, Ofis, Otel, Online, Diğer)
+- [x] Navigasyon entegrasyonu
+  - [x] Header'a "Toptan Kahve" linkinin eklenmesi
+  - [x] Mobil navigasyonda link eklenmesi
+  - [x] Uygun ikon kullanımı
+
+## [FEATURE:mobile-responsive-design-improvements] [2025-01-27] Mobile Responsive Design Improvements
+- [x] #31: Improved mobile responsiveness for hero section buttons ("Hemen Satın Al" and "Daha Fazla Bilgi")
+- [x] #32: Implemented horizontal scrollable product carousel with infinite scroll and 2-second auto-scroll
+- [x] #33: Enhanced mobile menu with proper icon alignment and divider lines between menu items
+
+## [FEATURE:featured-products-carousel-navigation] [2025-01-27] Öne Çıkan Ürünler Carousel Navigasyon Okları
+- [x] #34: Öne çıkan ürünler carousel'ına sol ve sağ navigasyon okları eklendi
+  - Manuel navigasyon için clickable arrow butonları
+  - Mevcut auto-scroll ve infinite scroll özelliklerinin korunması
+  - Hover efektleri ve smooth transition animasyonları
+  - Accessibility için aria-label etiketleri
+  - Responsive tasarım ile tüm ekran boyutlarında uyumluluk
+
+## [FEATURE:css-variables-integration] [2025-01-27] CSS Değişkenleri ve Tailwind Entegrasyonu Düzeltmesi
+- [x] #35: CSS değişkenlerinin Tailwind CSS ile entegrasyonu düzeltildi
+  - Tailwind config'de hard-coded renkler yerine CSS değişkenleri kullanımına geçiş
+  - globals.css'teki :root değişkenlerinin artık web sitesini etkilemesi sağlandı
+  - var(--primary), var(--secondary), var(--accent) vb. değişkenlerin Tailwind sınıflarında kullanımı
+  - Merkezi renk yönetimi ile tema değişikliklerinin kolaylaştırılması
+
+## 2025-01-24 - Blog Görselleri Google Drive Entegrasyonu Düzeltmesi
+
+### Tamamlanan İşler
+- [x] #36: Blog görsellerinde Google Drive URL'lerinin düzgün çalışması sağlandı ✅
+  - Placeholder sistemleri kaldırıldı
+  - Ürün fotoğraflarıyla aynı yapı kullanıldı (sadece `convertGoogleDriveUrl` fonksiyonu)
+  - `next.config.ts` dosyasına `drive.usercontent.google.com` hostname desteği eklendi
+  - Blog bileşenlerinde (`BlogPreview`, `BlogPage`, `BlogDetailPage`) Google Drive URL işleme entegrasyonu
+  - Server Component uyumluluğu sağlandı (onError handler'ları kaldırıldı)
+  - `unoptimized` prop'unun kaldırılması
+  - Google Drive URL formatı `thumbnail` formatına güncellendi
+  - Build süreci başarıyla tamamlandı
+  - **Blog fotoğrafları artık düzgün şekilde görüntüleniyor** ✅
+
+### Teknik Detaylar
+- Google Drive URL formatı: `https://drive.google.com/thumbnail?id=FILE_ID&sz=w800`
+- Next.js Image component optimizasyonu aktif
+- Hostname desteği: `drive.google.com` ve `drive.usercontent.google.com`
+- Ürün görselleriyle tutarlı yapı: sadece URL dönüştürme
+
+### Çözüm Adımları
+1. `unoptimized` prop'unun kaldırılması
+2. Google Drive URL formatının `thumbnail` formatına güncellenmesi
+3. Next.js'in kendi image optimization'ının kullanılması
+
+## 2025-01-24 - About Sayfası Görsel Güncellemesi
+
+### Tamamlanan İşler
+- [x] #37: About sayfasındaki "Hikayemiz" ve "Değerlerimiz" bölümlerinin görselleri güncellendi
+  - Placeholder SVG görselleri kaldırıldı
+  - Her iki bölümde de `mood-logo.png` görseli kullanıldı
+  - Next.js Image component ile optimize edilmiş görsel yükleme
+  - Responsive tasarım ile uyumlu görsel boyutlandırma
+  - `object-contain` ile logo'nun oranlarının korunması
+  - Build süreci başarıyla tamamlandı
+
+### Teknik Detaylar
+- **Görsel Yolu**: `/mood-logo.png` (public klasöründen)
+- **Image Component**: Next.js Image ile optimizasyon
+- **Boyutlandırma**: 400x300 piksel, responsive container içinde
+- **Styling**: `object-contain` ile oran korunması, `p-8` ile padding
+
+### Etkilenen Bölümler
+- "Hikayemiz" bölümü sağ taraf görseli
+- "Değerlerimiz" bölümü sol taraf görseli
+
+## [FEATURE:grinding-options] [2025-01-27] Ürün Detayında Öğütme Seçenekleri Ekleme
+
+- [x] Çekirdek kahveler için öğütme seçenekleri ekleme
+  - [x] Product interface'ine availableGrindOptions alanı ekleme
+  - [x] products.json dosyasında her ürün için öğütme seçenekleri tanımlama
+  - [x] Türk Kahvesi için availableGrindOptions: null değeri
+  - [x] Diğer kahveler için 9 farklı öğütme seçeneği: whole-bean, espresso, filter, moka-pot, chemex, v60, french-press, cold-brew, aeropress
+  - [x] "Çekirdek" seçeneğinin varsayılan olarak seçili olması
+- [x] Sepet entegrasyonu
+  - [x] CartItem interface'ine grindType alanı ekleme
+  - [x] CartContext'te öğütme seçeneği ile benzersiz ürün kimliği oluşturma
+  - [x] Aynı ürünün farklı öğütme seçenekleriyle ayrı sepet öğeleri olarak işlenmesi
+- [x] UI/UX iyileştirmeleri
+  - [x] ProductDetail sayfasında dinamik öğütme seçimi bölümü
+  - [x] Ürün verisindeki availableGrindOptions kullanımı
+  - [x] availableGrindOptions null ise öğütme seçeneklerinin gizlenmesi
+  - [x] 2 sütunlu grid layout ile öğütme seçenekleri gösterimi
+  - [x] Seçili öğütme seçeneği için vurgulama (accent rengi)
+  - [x] CartItem bileşeninde öğütme seçeneği gösterimi
+- [x] Veri yapısı iyileştirmesi
+  - [x] Hardcoded öğütme seçeneklerinden ürün bazlı dinamik seçeneklere geçiş
+  - [x] Her ürün için özelleştirilebilir öğütme seçenekleri
+  - [x] Türk Kahvesi kontrolü ürün verisinden yapılması

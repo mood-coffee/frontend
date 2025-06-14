@@ -18,11 +18,11 @@ export function HeroSection() {
               Özenle seçilmiş ve ustalıkla kavrulmuş kahve çekirdekleri kapınıza teslim.
               Her sabah mükemmel fincanı deneyimleyin.
             </p>
-            <div className="mt-10 flex gap-4">
-              <Button size="lg" href="/products">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Button size="lg" href="/products" className="w-full sm:w-auto">
                 Hemen Satın Al
               </Button>
-              <Button size="lg" variant="outline" href="/about">
+              <Button size="lg" variant="outline" href="/about" className="w-full sm:w-auto">
                 Daha Fazla Bilgi
               </Button>
             </div>
