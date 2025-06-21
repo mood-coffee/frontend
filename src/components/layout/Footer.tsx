@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 
 /**
@@ -10,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-white py-12 mt-24">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4 text-accent">Mood Roastery</h3>
             <p className="text-sm text-secondary mb-4">
@@ -108,7 +109,42 @@ export function Footer() {
                   Şartlar
                 </Link>
               </li>
+              <li>
+                <Link href="/mesafeli-satis-sozlesmesi" className="text-sm text-secondary hover:text-accent transition-colors">
+                  Mesafeli Satış Sözleşmesi
+                </Link>
+              </li>
             </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-accent">Güvenli Ödeme</h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Image
+                  src="/payment/visa-logo.png"
+                  alt="Visa"
+                  width={40}
+                  height={24}
+                  className="h-6 w-auto object-contain"
+                />
+                <Image
+                  src="/payment/mastercard-logo.png"
+                  alt="Mastercard"
+                  width={40}
+                  height={24}
+                  className="h-6 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center">
+                <Image
+                  src="/payment/iyzico_ile_ode_colored.png"
+                  alt="Iyzico ile Öde"
+                  width={120}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-natural">

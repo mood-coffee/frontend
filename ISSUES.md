@@ -6,6 +6,7 @@ Bu belge, projedeki özelliklerin ve görevlerin ilerlemesini takip eder.
 
 - [x] #33: Toptan Kahve Başvuru Sayfası ve Formu Ekleme ✓ (Tamamlandı)
 - [x] #38: Ürün Detayında Öğütme Seçenekleri Ekleme ✓ (Tamamlandı)
+- [x] #39: Footer'a Mesafeli Satış Sözleşmesi Ekleme ✓ (Tamamlandı)
 - [FEATURE:architecture-refactor] Modüler ve Feature-Temelli Mimariye Geçiş (Devam Ediyor)
 - [FEATURE:api-adapter] API Adapter Katmanı İyileştirmesi ✓ (Tamamlandı)
 - [FEATURE:cart-state] Sepet Durum Yönetimini Konsolide Etme ✓ (Tamamlandı)

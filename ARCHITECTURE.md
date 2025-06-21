@@ -1,5 +1,13 @@
 # Project Architecture
 
+### 2024-12-21 – Updated: Footer'a Mesafeli Satış Sözleşmesi Eklendi
+
+Footer'ın yasal kısmına mesafeli satış sözleşmesi eklendi:
+- `/mesafeli-satis-sozlesmesi` rotası oluşturuldu
+- Tam yasal sözleşme içeriği ile yeni sayfa implementasyonu
+- Footer component'ında yasal bölümüne yeni link eklendi
+- Responsive tasarım ve düzenli içerik yapısı sağlandı
+
 ### 2024-05-24 – Updated: Toptan Kahve Başvuru Sayfası ve Formu Eklendi
 
 Yeni toptan kahve başvuru sayfası ve formu implementasyonu:
