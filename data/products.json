@@ -7,15 +7,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 80
+        "price": 130
       },
       {
         "weight": "250",
-        "price": 200
+        "price": 315
       },
       {
         "weight": "1000",
-        "price": 800
+        "price": 1210
       }
     ],
     "currency": "TRY",
@@ -46,15 +46,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 130
+        "price": 180
       },
       {
         "weight": "250",
-        "price": 320
+        "price": 435
       },
       {
         "weight": "1000",
-        "price": 1280
+        "price": 1670
       }
     ],
     "currency": "TRY",
@@ -102,15 +102,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 80
+        "price": 130
       },
       {
         "weight": "250",
-        "price": 200
+        "price": 315
       },
       {
         "weight": "1000",
-        "price": 800
+        "price": 1210
       }
     ],
     "currency": "TRY",
@@ -156,15 +156,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 120
+        "price": 165
       },
       {
         "weight": "250",
-        "price": 290
+        "price": 395
       },
       {
         "weight": "1000",
-        "price": 1160
+        "price": 1525
       }
     ],
     "currency": "TRY",
@@ -210,15 +210,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 130
+        "price": 185
       },
       {
         "weight": "250",
-        "price": 330
+        "price": 445
       },
       {
         "weight": "1000",
-        "price": 1320
+        "price": 1715
       }
     ],
     "currency": "TRY",
@@ -264,15 +264,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 130
+        "price": 180
       },
       {
         "weight": "250",
-        "price": 320
+        "price": 430
       },
       {
         "weight": "1000",
-        "price": 1280
+        "price": 1650
       }
     ],
     "currency": "TRY",
@@ -317,15 +317,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 130
+        "price": 185
       },
       {
         "weight": "250",
-        "price": 330
+        "price": 440
       },
       {
         "weight": "1000",
-        "price": 1320
+        "price": 1695
       }
     ],
     "currency": "TRY",
@@ -370,15 +370,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 175
+        "price": 240
       },
       {
         "weight": "250",
-        "price": 430
+        "price": 570
       },
       {
         "weight": "1000",
-        "price": 1720
+        "price": 2200
       }
     ],
     "currency": "TRY",
@@ -423,15 +423,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 130
+        "price": 180
       },
       {
         "weight": "250",
-        "price": 320
+        "price": 430
       },
       {
         "weight": "1000",
-        "price": 1280
+        "price": 1650
       }
     ],
     "currency": "TRY",
@@ -477,15 +477,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 150
+        "price": 210
       },
       {
         "weight": "250",
-        "price": 375
+        "price": 500
       },
       {
         "weight": "1000",
-        "price": 1500
+        "price": 1935
       }
     ],
     "currency": "TRY",
@@ -530,15 +530,15 @@
     "priceWeight": [
       {
         "weight": "100",
-        "price": 140
+        "price": 190
       },
       {
         "weight": "250",
-        "price": 345
+        "price": 465
       },
       {
         "weight": "1000",
-        "price": 1380
+        "price": 1780
       }
     ],
     "currency": "TRY",
@@ -563,6 +563,250 @@
       "https://drive.google.com/file/d/1sEdX21tZy9_c284N34q2WMa5AsgW3NNn/view?usp=drive_link",
       "https://drive.google.com/file/d/1UufI-40v610x6PIYZIS5KjmGvNO9xWVy/view?usp=drive_link"
     ],
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Costa Rica Microlot",
+    "slug": "costa-rica-microlot",
+    "description": "Costa Rica Microlot, özenle seçilmiş mikro lotlardan elde edilen özel bir kahve. Nektarin ve şeftalinin tatlılığı, tarçının sıcaklığıyla birleşerek benzersiz bir tat profili sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 260
+      },
+      {
+        "weight": "250",
+        "price": 625
+      },
+      {
+        "weight": "1000",
+        "price": 2415
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Costa Rica",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Natural",
+    "growingAltitude": "1400-1700m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Nectarine",
+      "Peach",
+      "Cinnamon"
+    ],
+    "images": [],
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Tanzania Burka Estate",
+    "slug": "tanzania-burka-estate",
+    "description": "Tanzania Burka Estate, Afrika'nın en iyi kahve bölgelerinden biri olan Tanzanya'dan gelen özel bir kahve. Hibiskus ve kırmızı meyvelerin canlılığı, sütlü çikolata ve vanilyayla dengelenerek zengin bir tat deneyimi sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 215
+      },
+      {
+        "weight": "250",
+        "price": 515
+      },
+      {
+        "weight": "1000",
+        "price": 1980
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Tanzania",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Natural",
+    "growingAltitude": "1400-1800m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Hibiscus",
+      "Red Berries",
+      "Milk Chocolate",
+      "Vanilla"
+    ],
+    "images": [],
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Indonesia Frinsa Edun (72 Hour Fermentation)",
+    "slug": "indonesia-frinsa-edun-72-hour-fermentation",
+    "description": "Indonesia Frinsa Edun, 72 saatlik anaerobik fermantasyon süreciyle işlenen özel bir Endonezya kahvesi. Siyah kiraz, hindistancevizi ve kakao notaları, karpuz ve böğürtlen sorbesi tadlarıyla buluşarak benzersiz ve kompleks bir profil sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 290
+      },
+      {
+        "weight": "250",
+        "price": 695
+      },
+      {
+        "weight": "1000",
+        "price": 2670
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Indonesia",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Anaerobic Natural Lactobacillus",
+    "growingAltitude": "1600+m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Black Cherry",
+      "Coconut",
+      "Cacao",
+      "Watermelon",
+      "Blackberry Sorbet"
+    ],
+    "images": [],
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Ethiopia Yirgacheffee Bildimoo Aricha",
+    "slug": "ethiopia-yirgacheffee-bildimoo-aricha",
+    "description": "Ethiopia Yirgacheffee Bildimoo Aricha, dünyanın en ünlü kahve bölgelerinden biri olan Yirgacheffe'den gelen seçkin bir Etiyopya kahvesi. Çikolata, kavun ve meyvemsi notalarıyla zengin bir tat profili sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 220
+      },
+      {
+        "weight": "250",
+        "price": 530
+      },
+      {
+        "weight": "1000",
+        "price": 2040
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Ethiopia",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Natural",
+    "growingAltitude": "1700-2200m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Chocolate",
+      "Melon",
+      "Fruity"
+    ],
+    "images": [],
+    "featured": false,
+    "availableGrindOptions": [
+      "whole-bean",
+      "espresso",
+      "filter",
+      "moka-pot",
+      "chemex",
+      "v60",
+      "french-press",
+      "cold-brew",
+      "aeropress"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Rwanda Nyamasheke (Social Responsibility Project)",
+    "slug": "rwanda-nyamasheke-social-responsibility-project",
+    "description": "Rwanda Nyamasheke, sosyal sorumluluk projesi kapsamında üretilen özel bir Ruanda kahvesi. Kivi, narenciye, ahududu ve karamel notalarıyla tatlı ve canlı bir tat profili sunar.",
+    "priceWeight": [
+      {
+        "weight": "100",
+        "price": 250
+      },
+      {
+        "weight": "250",
+        "price": 600
+      },
+      {
+        "weight": "1000",
+        "price": 2310
+      }
+    ],
+    "currency": "TRY",
+    "inStock": true,
+    "isActive": true,
+    "category": "single_origin",
+    "origin": "Rwanda",
+    "acidity": 3,
+    "intensity": 3,
+    "processing": "Anaerobic Natural",
+    "growingAltitude": "1600-1900m",
+    "roastLevel": "Medium",
+    "flavorNotes": [
+      "Kiwi",
+      "Citrus Fruit",
+      "Raspberry",
+      "Caramel"
+    ],
+    "images": [],
     "featured": false,
     "availableGrindOptions": [
       "whole-bean",
